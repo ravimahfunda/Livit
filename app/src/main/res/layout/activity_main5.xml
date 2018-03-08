@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content">
+<LinearLayout
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="org.d3ifcool.livit.Main5Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:id="@+id/targetSummary"
+            android:gravity="bottom"
+            android:paddingTop="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_weight="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textSize="20sp"
+                android:text="Profil"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:padding="5dp"
+                app:srcCompat="@drawable/profile" />
+
+            <TextView
+                android:textStyle=""
+                android:textSize="18sp"
+                android:text="John Doe"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:textStyle=""
+                android:textSize="16sp"
+                android:text="jhondoe"
+                android:gravity="center"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="16sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:textStyle=""
+                    android:textSize="18sp"
+                    android:text="Track"
+                    android:layout_marginLeft="16sp"
+                    android:layout_marginRight="40sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="560k"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="16sp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="16sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:textStyle=""
+                    android:textSize="18sp"
+                    android:text="Avg.Speed "
+                    android:layout_marginLeft="16sp"
+                    android:layout_marginRight="40sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="42 Kmph"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="16sp"
+                    android:gravity="center"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="16sp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:textSize="16sp"
+                    android:text="Calory Bumed"
+                    android:layout_marginRight="0sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="42.1 Kmph"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#E0E0E0"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recent Activities"
+            android:textSize="15sp"
+            android:layout_marginLeft="16sp"
+            android:textColor="#90A4AE"/>
+
+        <Button
+            android:textColor="#90A4AE"
+            android:layout_gravity="center"
+            android:background="@drawable/button_background"
+            android:layout_margin="8dp"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:backgroundTint="#eee"
+            android:text="Today"
+            android:fontFamily="sans-serif"
+            android:elevation="2dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19.02"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="25dp"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3400 meters Run"
+                android:textSize="13sp"
+                />
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18.02"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="25dp"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100 meters Run"
+                android:textSize="13sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15.00"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="25dp"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eat a shawarma"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+
+        <Button
+            android:textColor="#90A4AE"
+            android:layout_gravity="center"
+            android:background="@drawable/button_background"
+            android:layout_margin="8dp"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:backgroundTint="#eee"
+            android:text="Feb,19"
+            android:fontFamily="sans-serif"
+            android:elevation="2dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19.02"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="25dp"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3400 meters Run"
+                android:textSize="13sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18.02"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="25dp"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100 meters Run"
+                android:textSize="13sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15.00"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="25dp"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eat a shawarma"
+                android:textSize="13sp" />
+        </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
