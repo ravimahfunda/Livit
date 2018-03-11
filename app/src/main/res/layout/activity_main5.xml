@@ -2,358 +2,416 @@
 <ScrollView
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content">
-<LinearLayout
-
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="org.d3ifcool.livit.Main5Activity">
-
+    android:background="@color/gray">
     <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/colorPrimary">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context="org.d3ifcool.livit.Main5Activity">
 
         <LinearLayout
-            android:id="@+id/targetSummary"
-            android:gravity="bottom"
-            android:paddingTop="16dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:layout_weight="1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <TextView
-                android:textSize="20sp"
-                android:text="Profil"
-                android:background="@color/colorPrimary"
-                android:layout_width="match_parent"
+
+            <LinearLayout
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="8dp"
+                android:background="#fff"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white" />
+                android:padding="4dp">
+                <ImageView
 
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_alignParentTop="true"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:padding="5dp"
-                app:srcCompat="@drawable/profile" />
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mountain"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp" />
+            </LinearLayout>
 
             <TextView
                 android:textStyle=""
                 android:textSize="18sp"
                 android:text="John Doe"
-                android:gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:background="@color/colorPrimary"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white" />
 
             <TextView
+                android:fontFamily="sans-serif-light"
                 android:textStyle=""
-                android:textSize="16sp"
-                android:text="jhondoe"
-                android:gravity="center"
+                android:textSize="14sp"
+                android:text="jhondoe@gmail.com"
+                android:layout_gravity="center_horizontal"
                 android:background="@color/colorPrimary"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
 
             <LinearLayout
+                android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginTop="16sp"
-                android:orientation="vertical">
+                android:layout_gravity="center"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:textStyle=""
-                    android:textSize="18sp"
-                    android:text="Track"
-                    android:layout_marginLeft="16sp"
-                    android:layout_marginRight="40sp"
-                    android:layout_width="wrap_content"
+                <LinearLayout
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:layout_marginBottom="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="560k"
-                    android:textColor="@color/white"
-                    android:textAllCaps="true"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="16sp"
-                    android:gravity="center" />
-            </LinearLayout>
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginTop="16sp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:textStyle=""
-                    android:textSize="18sp"
-                    android:text="Avg.Speed "
-                    android:layout_marginLeft="16sp"
-                    android:layout_marginRight="40sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:layout_marginBottom="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="42 Kmph"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:layout_marginLeft="16sp"
-                    android:gravity="center"
-                    />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginTop="16sp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:textSize="16sp"
-                    android:text="Calory Bumed"
-                    android:layout_marginRight="0sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:layout_marginBottom="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="42.1 Kmph"
-                    android:textSize="20sp"
-                    android:textColor="@color/white"
-                    android:gravity="center" />
+                    <TextView
+                        android:textStyle=""
+                        android:textSize="12sp"
+                        android:text="Track"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:fontFamily="sans-serif-light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="560k"
+                        android:textColor="@color/white"
+                        android:textAllCaps="true"
+                        android:textSize="20sp" />
                 </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#E0E0E0"
-        android:orientation="vertical">
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Recent Activities"
-            android:textSize="15sp"
-            android:layout_marginLeft="16sp"
-            android:textColor="#90A4AE"/>
+                    <TextView
+                        android:textStyle=""
+                        android:textSize="12sp"
+                        android:text="Track"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:fontFamily="sans-serif-light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="560k"
+                        android:textColor="@color/white"
+                        android:textAllCaps="true"
+                        android:textSize="20sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
 
-        <Button
-            android:textColor="#90A4AE"
-            android:layout_gravity="center"
-            android:background="@drawable/button_background"
-            android:layout_margin="8dp"
-            android:layout_width="80dp"
-            android:layout_height="20dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:backgroundTint="#eee"
-            android:text="Today"
-            android:fontFamily="sans-serif"
-            android:elevation="2dp"/>
+                    <TextView
+                        android:textStyle=""
+                        android:textSize="12sp"
+                        android:text="Track"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginBottom="5dp"/>
+                    <TextView
+                        android:fontFamily="sans-serif-light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="560k"
+                        android:textColor="@color/white"
+                        android:textAllCaps="true"
+                        android:textSize="20sp" />
+                </LinearLayout>
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:orientation="horizontal"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/white">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="19.02"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="25dp"
-                android:textSize="13sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3400 meters Run"
-                android:textSize="13sp"
-                />
             </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:orientation="horizontal"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="2dp"
-            android:background="@color/white">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="18.02"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="25dp"
-                android:textSize="13sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="100 meters Run"
-                android:textSize="13sp"
-                />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:padding="16dp"
-            android:orientation="horizontal"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="2dp"
-            android:background="@color/white">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="15.00"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="25dp"
-                android:textSize="13sp" />
-
-            <TextView
-                android:layout_marginTop="2dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Eat a shawarma"
-                android:textSize="13sp" />
-        </LinearLayout>
-
-
-        <Button
-            android:textColor="#90A4AE"
-            android:layout_gravity="center"
-            android:background="@drawable/button_background"
-            android:layout_margin="8dp"
-            android:layout_width="80dp"
-            android:layout_height="20dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:backgroundTint="#eee"
-            android:text="Feb,19"
-            android:fontFamily="sans-serif"
-            android:elevation="2dp"/>
-
-
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:orientation="horizontal"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="8dp"
-            android:background="@color/white">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="19.02"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="25dp"
-                android:textSize="13sp" />
+                android:text="Recent Activities"
+                android:textSize="15sp" />
 
+            <!--DAY DIVIDER-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3400 meters Run"
-                android:textSize="13sp"
-                />
-        </LinearLayout>
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:background="@drawable/button_background"
+                android:backgroundTint="@color/light_gray"
+                android:elevation="2dp"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="Today" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:orientation="horizontal"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="2dp"
-            android:background="@color/white">
+            <!--DAY ACTIVITIES-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="25dp"
+                    android:text="19.02"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3400 meters Run"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="25dp"
+                    android:text="18.02"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100 meters Run"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="25dp"
+                    android:text="15.00"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Eat a shawarma"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!--DAY DIVIDER-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="18.02"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="25dp"
-                android:textSize="13sp" />
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:background="@drawable/button_background"
+                android:backgroundTint="@color/light_gray"
+                android:elevation="2dp"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="Today" />
 
+            <!--DAY ACTIVITIES-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="25dp"
+                    android:text="19.02"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3400 meters Run"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="25dp"
+                    android:text="18.02"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100 meters Run"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="25dp"
+                    android:text="15.00"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Eat a shawarma"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!--DAY DIVIDER-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="100 meters Run"
-                android:textSize="13sp"
-                />
-        </LinearLayout>
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:background="@drawable/button_background"
+                android:backgroundTint="@color/light_gray"
+                android:elevation="2dp"
+                android:fontFamily="sans-serif"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="Today" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:orientation="horizontal"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="2dp"
-            android:background="@color/white">
-
-            <TextView
-                android:layout_width="wrap_content"
+            <!--DAY ACTIVITIES-->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="15.00"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="25dp"
-                android:textSize="13sp" />
 
-            <TextView
-                android:layout_marginTop="2dp"
-                android:layout_width="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="25dp"
+                    android:text="19.02"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3400 meters Run"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Eat a shawarma"
-                android:textSize="13sp" />
-        </LinearLayout>
+
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="25dp"
+                    android:text="18.02"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100 meters Run"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="25dp"
+                    android:text="15.00"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="Eat a shawarma"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
-    </ScrollView>
+</ScrollView>

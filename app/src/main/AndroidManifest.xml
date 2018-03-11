@@ -13,7 +13,12 @@
         <activity android:name=".Main2Activity" />
         <activity android:name=".Main3Activity" />
         <activity android:name=".Main4Activity" />
-        <activity android:name=".Main5Activity"></activity>
+        <activity android:name=".Main5Activity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>1
+        </activity>
     </application>
 
 </manifest>
