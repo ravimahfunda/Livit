@@ -19,6 +19,7 @@
         <activity android:name=".AchiementsActivity"/>
         <activity android:name=".TimelineActivity"/>
         <activity android:name=".SettingsActivity"/>
+        <activity android:name=".RecommendationsActivity"/>
 
     </application>
 
