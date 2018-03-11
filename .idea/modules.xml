@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Livit.iml" filepath="$PROJECT_DIR$/Livit.iml" />
+      <module fileurl="file://E:\n\Livit\Livit.iml" filepath="E:\n\Livit\Livit.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\n\Livit\app\app.iml" filepath="E:\n\Livit\app\app.iml" />
     </modules>
   </component>
 </project>
