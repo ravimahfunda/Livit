@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+
+        android:layout_height="wrap_content"
+        tools:context="org.d3ifcool.livit.Main6Activity">
+
+        <!--ACCOUNT SECTION-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_marginBottom="2dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:background="@color/colorAccent"
+                    android:padding="16dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/ic_person_black_24dp"
+                    android:tint="@color/white"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Account"
+                    android:textSize="18sp"
+                    android:paddingLeft="16dp" />
+            </LinearLayout>
+
+            <!--EDIT TEXT-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:padding="16dp"
+                    android:background="@color/white"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Your Display Name"
+                    android:textSize="16sp" />
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Display Name"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:padding="16dp"
+                    android:background="@color/white"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Your Email"
+                    android:textSize="16sp" />
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Email"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:padding="16dp"
+                    android:background="@color/white"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Your Username"
+                    android:textSize="16sp" />
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Username"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--PERSONAL INFORMATION-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_marginBottom="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:background="@color/colorAccent"
+                    android:padding="16dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:src="@drawable/ic_menu_manage"
+                    android:tint="@color/white"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Preferences"
+                    android:textSize="18sp"
+                    android:paddingLeft="16dp" />
+            </LinearLayout>
+
+            <!--EDIT TEXT-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:padding="16dp"
+                    android:background="@color/white"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Your Display Name"
+                    android:textSize="16sp" />
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Display Name"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:padding="16dp"
+                    android:background="@color/white"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Your Email"
+                    android:textSize="16sp" />
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Email"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:padding="16dp"
+                    android:background="@color/white"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Your Username"
+                    android:textSize="16sp" />
+                <TextView
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Username"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>
+

@@ -3,11 +3,11 @@ package org.d3ifcool.livit;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Main6Activity extends AppCompatActivity {
+public class ExerciseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main6);
+        setContentView(R.layout.activity_exercise);
     }
 }
