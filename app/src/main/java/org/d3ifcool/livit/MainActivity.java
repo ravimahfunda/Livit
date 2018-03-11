@@ -50,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        recommendationsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, RecommendationsActivity.class);
+                startActivity(i);
+            }
+        });
 
     }
 }
