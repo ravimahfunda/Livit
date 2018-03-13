@@ -20,8 +20,7 @@
             android:layout_height="match_parent"
             android:layout_width="32dp"
             android:src="@drawable/ic_navigate_before_black_24dp"
-            android:tint="@color/white"
-            />
+            android:tint="@color/white" />
         <LinearLayout
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
