@@ -12,9 +12,8 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by haaniifaa on 13/03/2018.
+ * Managa how data shown and adapting Log Custom Class to Log List Item
  */
-
 public class LogAdapter extends ArrayAdapter<Log> {
     public LogAdapter(@NonNull Context context, @NonNull List<Log> objects) {
         super(context, 0, objects);

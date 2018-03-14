@@ -2,4 +2,20 @@
     <string name="app_name">Livit</string>
     <string name="title_activity_food_list">FoodListActivity</string>
     <string name="weekly_target_title">Weekly Target</string>
+    <string name="recommendation_title_sampletext">Wake up</string>
+    <string name="recommendation_description_sampletext">Wake up early! Get your things done at 7 AM.</string>
+    <string name="reccomendation_reminder_label">Remind me?</string>
+    <string name="recommendation_reminder_button_text">Yes, please</string>
+    <string name="timeline_devider_text">Today</string>
+    <string name="timeline_recent_activities_text">Recent Activities</string>
+    <string name="timeline_calori_burned_sampletext">560k</string>
+    <string name="timeline_calori_burned_title">Calori Burned</string>
+    <string name="timeline_avgspeed_sampletext">560k</string>
+    <string name="timeline_avgspeed_title">Avg. Speed</string>
+    <string name="timeline_track_sampletext">560k</string>
+    <string name="timeline_track_title">Track</string>
+    <string name="timeline_email_sampletext">jhondoe@gmail.com</string>
+    <string name="timeline_name_sampletext">John Doe</string>
+    <string name="achievement_description_sampletext">Lorem Ipsum sit dolor amet asdkasdasdkashda</string>
+    <string name="achievement_title_sample_text">Lorem Ipsum</string>
 </resources>

@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public class RecommendationsActivity extends AppCompatActivity {
 
-    private int index = 0; //menginisialisasikan index
-    private ArrayList<Recommendation> listRecommendation; // private untuk enkapsulasi , ArrayList untuk menampung semua list recomendation
+    private int index = 0;
+    private ArrayList<Recommendation> listRecommendation;
     private TextView title, description;
     private Button reminderButtonn;
 
@@ -20,10 +20,15 @@ public class RecommendationsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommendations); //men set view activity rekomendation
-        title = (TextView) findViewById(R.id.recommendation_title); // title di inisialisasi dengan id recomendation_title
-        description = (TextView) findViewById(R.id.description);
-        reminderButtonn = (Button) findViewById(R.id.reminderButton);
 
+        //Assigning UI to java code
+        title = (TextView) findViewById(R.id.title_textview);
+        description = (TextView) findViewById(R.id.description_textview);
+        reminderButtonn = (Button) findViewById(R.id.reminder_button);
+        ImageView nextButton = (ImageView) findViewById(R.id.next_button);
+        ImageView prevButton = (ImageView) findViewById(R.id.previous_button);
+
+        //Creating data
         listRecommendation = new ArrayList<Recommendation>(); // memanggil array list list recomendation
         listRecommendation.add(new Recommendation("Wake Up", "Time to Wake Up")); // memberikan deskripsi pada list recomendation
         listRecommendation.add(new Recommendation("Breakfast", "Time to Breakafst"));
@@ -32,22 +37,23 @@ public class RecommendationsActivity extends AppCompatActivity {
         listRecommendation.add(new Recommendation("Dinner", "Time to Dinner"));
         listRecommendation.add(new Recommendation("Sleep", "Time to Sleep !! "));
 
-        final ImageView nextButton = (ImageView) findViewById(R.id.nextButton); // megeset nextButton agar bisa di klik untuk next(ke rekomendation selanjutnya)
         nextButton.setOnClickListener(new View.OnClickListener() { // agar next\button bisa di klik
             @Override
             public void onClick(View view) {
-                if (index == listRecommendation.size() - 1) return; // jika  index listRecumendation kurang dari 1 maka index di tambah dan rekomendation di update
+                //Increasing the index for swapping between data, forbid it if it is the last data
+                if (index == listRecommendation.size() - 1) return;
                 index ++;
                 updateRecommendation();
             }
         });
 
-        final ImageView prevButton = (ImageView) findViewById(R.id.prevButton);// megeset prevButton agar bisa di klik untuk prev ( ke rekomendation sebelumnya)
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { // jika  index listRecumendation sama dengan 0 maka index--
+            public void onClick(View view) {
+                //Decrease the index for swapping between data, forbid it if it is the first data
                 if (index==0)return;
                 index--;
+                //Update UI
                 updateRecommendation();
             }
         });
@@ -55,20 +61,31 @@ public class RecommendationsActivity extends AppCompatActivity {
         reminderButtonn.setOnClickListener(new View.OnClickListener() { // mengubah warna , supaya jika di klik warna nya berganti
             @Override
             public void onClick(View view) { // agar bisa di klik
-                listRecommendation.get(index).setReminding(!listRecommendation.get(index).isReminding()); // memanggil list recomendation berdasarkan index
-                updateRecommendation(); // memanggil method update recomendation
+                //Update the state of object
+                listRecommendation.get(index).setReminding(!listRecommendation.get(index).isReminding());
+                //Update ui
+                updateRecommendation();
             }
         });
 
+        //Update UI for sync-ing with data
         updateRecommendation();
     }
 
+    /**
+     * Updating the UI that binds to data
+     * */
     void updateRecommendation(){
-        title.setText(listRecommendation.get(index).getTitle()); // untuk memanggil title berdasarkan index
+        //Update title
+        title.setText(listRecommendation.get(index).getTitle());
+        //Update description
         description.setText(listRecommendation.get(index).getDescription());
-        int imageId; // variable image\id
-        if(listRecommendation.get(index).isReminding())imageId=R.drawable.circle_danger; // jika list sudah di klik makan akan menampilkan button dari drawble circle_danger.
-        else imageId=R.drawable.button_background; //jika tidak di klik button tetap (button backgroun)
-        reminderButtonn.setBackground(getResources().getDrawable(imageId)); // button di set dari drawable image id
+
+        int imageId;
+        //Checking reminder state, is it clicked ?
+        if(listRecommendation.get(index).isReminding())imageId=R.drawable.circle_danger;
+        else imageId=R.drawable.circle_accent;
+        //Update remined button
+        reminderButtonn.setBackground(getResources().getDrawable(imageId));
     }
 }
