@@ -6,6 +6,7 @@ package org.d3ifcool.livit;
 
 public class User {
     private String displayName ;
+    private String email ;
     private String username ;
     private String bloodType ;
     private String goals ;
