@@ -62,7 +62,6 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:gravity="center_horizontal">
-
                 <TextView
                     android:textStyle=""
                     android:textSize="12sp"

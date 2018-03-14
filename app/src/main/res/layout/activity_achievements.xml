@@ -1,14 +1,13 @@
+<!--ACHIEVEMENT MENU-->
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
     <View
         android:layout_width="match_parent"
         android:layout_height="272dp"
         android:background="@color/colorPrimary"
-        android:orientation="vertical" />
-
+        android:orientation="vertical"/>
     <LinearLayout
         android:id="@+id/targetSummary"
         android:gravity="bottom"
@@ -19,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
+        <!--WEEKLY TARGET TILE-->
         <TextView
             android:layout_marginTop="32dp"
             android:layout_width="match_parent"
@@ -28,15 +27,16 @@
             android:text="@string/weekly_target_title"
             android:textColor="@color/white"
             android:textSize="24sp" />
+        <!--WEEKLY TARGET DESCRIPTION-->
         <TextView
             android:gravity="end"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:text="Lorem Ipsum sit dolor amet rahma vew view akas"
+            android:text="@string/achievements_weeklytargettitle_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"/>
-
+        <!--WEEKLY TARGET PROGRESS BAR-->
         <ProgressBar
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
@@ -45,15 +45,15 @@
             android:layout_height="8dp"
             android:progress="50"
             android:progressTint="@color/colorAccent" />
-
+        <!--WEEKLY TARGET TO DO TITLE-->
         <TextView
             android:fontFamily="sans-serif-light"
             android:textColor="@color/white"
-            android:text="To Do"
+            android:text="@string/achievements_todotitle"
             android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
+        <!--LIST VIEW TO DO-->
         <ListView
             android:id="@+id/achievements_list_view"
             android:layout_height="match_parent"
