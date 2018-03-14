@@ -2,7 +2,7 @@ package org.d3ifcool.livit;
 
 /**
  * Represent data of user's recent activities
- * Consisting time and descripstion of the activities
+ * Consisting time and description of the activities
  */
 public class Log {
     private String time;

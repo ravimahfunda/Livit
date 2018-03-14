@@ -1,7 +1,8 @@
 package org.d3ifcool.livit;
 
 /**
- * Created by haaniifaa on 14/03/2018.
+ * Represent data of a user
+ * Consisting displayName, email, username , bloodType, goals , height , weight , age , sex
  */
 
 public class User {

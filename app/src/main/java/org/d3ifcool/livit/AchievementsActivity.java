@@ -19,6 +19,8 @@ public class AchievementsActivity extends AppCompatActivity {
         achievements.add(new Achievement("Runner","Run 1000 m",100,Achievement.CATEGORY_EXCERSISE));
         achievements.add(new Achievement("Vegeta","Eat 5 vegetables",80,Achievement.CATEGORY_NUTRITION));
         achievements.add(new Achievement("Heroes","Fill all data",30,Achievement.CATEGORY_OTHER));
+        achievements.add(new Achievement("Diligent","Log in 7 deay consecutively",100,Achievement.CATEGORY_OTHER));
+        achievements.add(new Achievement("Marathon","Run 4000m",60,Achievement.CATEGORY_EXCERSISE));
 
         //Implement log data to log list in layout
         ListView listView = (ListView) findViewById(R.id.achievements_list_view);

@@ -4,7 +4,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:background="@color/light_gray">
-
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -33,11 +32,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Account"
+                    android:text="@string/settings_accountsection_text"
                     android:textSize="18sp"
                     android:paddingLeft="16dp" />
             </LinearLayout>
-            <!--EDIT TEXT-->
+            <!--DISPLAY NAME-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -48,7 +47,7 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:hint="Your Display Name"
+                    android:hint="@string/settings_displayname_hint"
                     android:textSize="16sp" />
                 <TextView
                     android:fontFamily="sans-serif-light"
@@ -56,19 +55,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="Display Name"/>
+                    android:text="@string/settings_displayname_text"/>
             </LinearLayout>
+            <!--EMAIL-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
                     android:id="@+id/email"
+                    android:inputType="textEmailAddress"
                     android:padding="16dp"
                     android:background="@color/white"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:hint="Your Email"
+                    android:hint="@string/settings_email_hint"
                     android:textSize="16sp" />
                 <TextView
                     android:fontFamily="sans-serif-light"
@@ -76,8 +77,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="Email"/>
+                    android:text="@string/settings_email_text"/>
             </LinearLayout>
+            <!--USERNAME-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -88,7 +90,7 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:hint="Your Username"
+                    android:hint="@string/settings_username_hint"
                     android:textSize="16sp" />
                 <TextView
                     android:fontFamily="sans-serif-light"
@@ -96,11 +98,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="Username"/>
+                    android:text="@string/settings_username_text"/>
             </LinearLayout>
         </LinearLayout>
-
-        <!--PERSONAL INFORMATION-->
+        <!--PREFERENCES-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -121,12 +122,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Preferences"
+                    android:text="@string/settings_preferences_text"
                     android:textSize="18sp"
                     android:paddingLeft="16dp" />
             </LinearLayout>
-
-            <!--EDIT TEXT-->
+            <!--BLOOD TYPE-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -137,7 +137,7 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:hint="Your Blood Type"
+                    android:hint="@string/setting_bloodtype_hint"
                     android:textSize="16sp" />
                 <TextView
                     android:fontFamily="sans-serif-light"
@@ -145,8 +145,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="Blood Type"/>
+                    android:text="@string/setting_bloodtype_text"/>
             </LinearLayout>
+            <!--GOALS-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -157,7 +158,7 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:hint="Your Goals"
+                    android:hint="@string/settings_goals_hint"
                     android:textSize="16sp" />
                 <TextView
                     android:fontFamily="sans-serif-light"
@@ -165,11 +166,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="Goals"/>
+                    android:text="@string/settings_goals_text"/>
             </LinearLayout>
         </LinearLayout>
-
-        <!--MEDICAL INFORMATION-->
+        <!--MEDICAL-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -190,12 +190,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Preferences"
+                    android:text="@string/settings_medical_text"
                     android:textSize="18sp"
                     android:paddingLeft="16dp" />
             </LinearLayout>
-
-            <!--EDIT TEXT-->
+            <!--HEIGHT-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -206,7 +205,7 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:hint="Your Height"
+                    android:hint="@string/settings_height_hint"
                     android:textSize="16sp" />
                 <TextView
                     android:fontFamily="sans-serif-light"
@@ -214,8 +213,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="Height"/>
+                    android:text="@string/settings_height_text"/>
             </LinearLayout>
+            <!--WEIGHT-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -226,7 +226,7 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:hint="Your Weight"
+                    android:hint="@string/settings_weight_hint"
                     android:textSize="16sp" />
                 <TextView
                     android:fontFamily="sans-serif-light"
@@ -234,8 +234,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="Weight"/>
+                    android:text="@string/settings_weight_text"/>
             </LinearLayout>
+            <!--AGE-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -246,7 +247,7 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:hint="Your Age"
+                    android:hint="@string/settings_age_hint"
                     android:textSize="16sp" />
                 <TextView
                     android:fontFamily="sans-serif-light"
@@ -254,8 +255,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="Age"/>
+                    android:text="@string/settings_age_text"/>
             </LinearLayout>
+            <!--SEX-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -266,7 +268,7 @@
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:hint="Your Sex"
+                    android:hint="@string/settings_sex_hint"
                     android:textSize="16sp" />
                 <TextView
                     android:fontFamily="sans-serif-light"
@@ -274,10 +276,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="16dp"
-                    android:text="Sex"/>
+                    android:text="@string/settings_sex_text"/>
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 </ScrollView>
 

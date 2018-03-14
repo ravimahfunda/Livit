@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         View recommendationsButton = findViewById(R.id.recommendation_button);
         View timelineButton = findViewById(R.id.timeline_button);
         View settingsButton = findViewById(R.id.settings_button);
-
 
         exerciseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
+        nutritionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this,"Features not implemented yet", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
