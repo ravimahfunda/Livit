@@ -5,8 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import java.sql.Time;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -32,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         achievementsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, AchiementsActivity.class);
+                Intent i = new Intent(MainActivity.this, AchievementsActivity.class);
                 startActivity(i);
             }
         });

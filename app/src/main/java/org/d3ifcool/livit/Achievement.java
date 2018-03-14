@@ -1,9 +1,10 @@
 package org.d3ifcool.livit;
 
-/**
- * Created by Multimedia on 13/03/2018.
- */
 
+/**
+ * Represent data of user's achievements
+ * Consisting title, description, progress, and category of the achievement
+ */
 public class Achievement {
     private String title;
     private String description;
@@ -14,10 +15,10 @@ public class Achievement {
     public static final int CATEGORY_NUTRITION = 1;
     public static final int CATEGORY_OTHER = 2;
 
-    public Achievement(String title, String description, int category) {
+    public Achievement(String title, String description, int progress, int category) {
         this.title = title;
         this.description = description;
-        this.progress = 0;
+        this.progress = progress;
         this.category = category;
     }
 
@@ -25,26 +26,15 @@ public class Achievement {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public int getProgress() {
         return progress;
     }
 
-    public void setProgress(int progress) {
-        this.progress = progress;
-    }
-
+    //Returns true if the achievemnt is complete, false if not
     public boolean isCompleted() {
         return progress==100;
     }

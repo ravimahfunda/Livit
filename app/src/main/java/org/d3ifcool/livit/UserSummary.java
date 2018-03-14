@@ -1,9 +1,9 @@
 package org.d3ifcool.livit;
 
 /**
- * Created by haaniifaa on 13/03/2018.
+ * Represent data of a user
+ * Consisting name, email, total track, average speed, and total calori burned
  */
-
 public class UserSummary {
     private String name;
     private String email;

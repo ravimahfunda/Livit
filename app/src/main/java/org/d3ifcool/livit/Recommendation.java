@@ -1,9 +1,9 @@
 package org.d3ifcool.livit;
 
 /**
- * Created by haaniifaa on 12/03/2018.
+ * Represent of user's recommendation
+ * Consisting title, description, and a state wheter user want to reminded or not
  */
-
 public class Recommendation {
     private String title;
     private String description;

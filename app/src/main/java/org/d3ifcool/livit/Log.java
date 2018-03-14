@@ -1,9 +1,9 @@
 package org.d3ifcool.livit;
 
 /**
- * Created by haaniifaa on 13/03/2018.
+ * Represent data of user's recent activities
+ * Consisting time and descripstion of the activities
  */
-
 public class Log {
     private String time;
     private String description;
