@@ -45,6 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:id="@+id/displayName"
                     android:padding="16dp"
                     android:background="@color/white"
                     android:layout_weight="1"
@@ -64,6 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:id="@+id/email"
                     android:padding="16dp"
                     android:background="@color/white"
                     android:layout_weight="1"
@@ -83,6 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:id="@+id/username"
                     android:padding="16dp"
                     android:background="@color/white"
                     android:layout_weight="1"
@@ -131,6 +134,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:id="@+id/blood_type"
                     android:padding="16dp"
                     android:background="@color/white"
                     android:layout_weight="1"
@@ -150,6 +154,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:id="@+id/goals"
                     android:padding="16dp"
                     android:background="@color/white"
                     android:layout_weight="1"
@@ -198,6 +203,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:id="@+id/your_height"
                     android:padding="16dp"
                     android:background="@color/white"
                     android:layout_weight="1"
@@ -217,6 +223,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:id="@+id/your_weight"
                     android:padding="16dp"
                     android:background="@color/white"
                     android:layout_weight="1"
@@ -236,6 +243,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:id="@+id/your_age"
                     android:padding="16dp"
                     android:background="@color/white"
                     android:layout_weight="1"
@@ -255,6 +263,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:id="@+id/your_sex"
                     android:padding="16dp"
                     android:background="@color/white"
                     android:layout_weight="1"
