@@ -18,4 +18,25 @@
     <string name="timeline_name_sampletext">John Doe</string>
     <string name="achievement_description_sampletext">Lorem Ipsum sit dolor amet asdkasdasdkashda</string>
     <string name="achievement_title_sample_text">Lorem Ipsum</string>
+    <string name="settings_accountsection_text">Account</string>
+    <string name="settings_displayname_hint">Your Display Name</string>
+    <string name="settings_email_hint">Your Email</string>
+    <string name="settings_username_hint">Your Username</string>
+    <string name="settings_preferences_text">Preferences</string>
+    <string name="setting_bloodtype_hint">Your Blood Type</string>
+    <string name="settings_goals_hint">Your Goals</string>
+    <string name="settings_medical_text">Medical</string>
+    <string name="settings_height_hint">Your Height</string>
+    <string name="settings_weight_hint">Your Weight</string>
+    <string name="settings_age_hint">Your Age</string>
+    <string name="settings_weight_text">Weight</string>
+    <string name="settings_age_text">Age</string>
+    <string name="settings_sex_hint">Your Sex</string>
+    <string name="settings_sex_text">Sex</string>
+    <string name="settings_height_text">Height</string>
+    <string name="settings_goals_text">Goals</string>
+    <string name="setting_bloodtype_text">Blood Type</string>
+    <string name="settings_username_text">Username</string>
+    <string name="settings_email_text">Email</string>
+    <string name="settings_displayname_text">Display Name</string>
 </resources>
