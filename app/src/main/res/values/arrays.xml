@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_blood_type_options">
+        <item>@string/blood_type_A</item>
+        <item>@string/blood_type_B</item>
+        <item>@string/blood_type_O</item>
+        <item>@string/blood_type_AB</item>
+    </string-array>
+
+    <string-array name="array_goals_options">
+        <item>@string/goals_conditioning</item>
+        <item>@string/goals_muscle_mass</item>
+        <item>@string/goals_diet</item>
+    </string-array>
+
+    <string-array name="array_sleep_pattern_options">
+        <item>@string/sleep_pattern_normal</item>
+        <item>@string/sleep_pattern_poly_phasic</item>
+    </string-array>
+
+    <string-array name="array_sex_options">
+        <item>@string/sex_male</item>
+        <item>@string/sex_female</item>
+    </string-array>
+</resources>

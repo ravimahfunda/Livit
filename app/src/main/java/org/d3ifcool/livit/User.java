@@ -6,9 +6,6 @@ package org.d3ifcool.livit;
  */
 
 public class User {
-    private String displayName ;
-    private String email ;
-    private String username ;
     private String bloodType ;
     private String goals ;
     private String height ;
@@ -16,29 +13,13 @@ public class User {
     private String age ;
     private String sex ;
 
-    public User(String displayName, String username, String email, String bloodType, String goals ,String height , String weight ,String age , String sex) {
-        this.displayName = displayName;
-        this.email = email;
-        this.username= username;
+    public User(String bloodType, String goals ,String height , String weight ,String age , String sex) {
         this.bloodType= bloodType;
         this.goals = goals;
         this.height = height;
         this.weight = weight;
         this.age = age;
         this.sex = sex;
-    }
-
-
-    public String getDisplayName() {
-        return displayName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getUsername() {
-        return username;
     }
 
     public String getBloodType() {

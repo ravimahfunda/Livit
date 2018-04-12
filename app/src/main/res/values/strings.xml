@@ -2,11 +2,33 @@
     <string name="app_name">Livit</string>
     <string name="title_activity_food_list">FoodListActivity</string>
     <string name="weekly_target_title">Weekly Target</string>
+
+    <!--NEW ERA-->
+    <!--BLOOD TYPE-->
+    <string name="blood_type_A">A</string>
+    <string name="blood_type_B">B</string>
+    <string name="blood_type_O">0</string>
+    <string name="blood_type_AB">AB</string>
+
+    <!--GOALS-->
+    <string name="goals_conditioning">Conditioning</string>
+    <string name="goals_muscle_mass">Muscle Mass</string>
+    <string name="goals_diet">Diet</string>
+
+    <!--SLEEP PATTERN-->
+    <string name="sleep_pattern_normal">Normal</string>
+    <string name="sleep_pattern_poly_phasic">Poly-phasic</string>
+
+    <!--BLOOD TYPE-->
+    <string name="sex_male">Male</string>
+    <string name="sex_female">Female</string>
+
     <!--RECOMMENDATION-->
     <string name="recommendation_title_sampletext">Wake up</string>
     <string name="recommendation_description_sampletext">Wake up early! Get your things done at 7 AM.</string>
     <string name="reccomendation_reminder_label">Remind me?</string>
     <string name="recommendation_reminder_button_text">Yes, please</string>
+
     <!--TIMELINE-->
     <string name="timeline_devider_text">Today</string>
     <string name="timeline_recent_activities_text">Recent Activities</string>
@@ -18,11 +40,13 @@
     <string name="timeline_track_title">Track</string>
     <string name="timeline_email_sampletext">jhondoe@gmail.com</string>
     <string name="timeline_name_sampletext">John Doe</string>
+
     <!--ACHIEVEMENTS-->
     <string name="achievement_description_sampletext">Lorem Ipsum sit dolor amet asdkasdasdkashda</string>
     <string name="achievement_title_sample_text">Lorem Ipsum</string>
     <string name="achievements_weeklytargettitle_text">Lorem Ipsum sit dolor amet rahma vew view akas</string>
     <string name="achievements_todotitle">To Do</string>
+
     <!--MAIN-->
     <string name="main_exercisetitle_text">Exercise</string>
     <string name="main_numbersofdaytitle_text">DAY #29</string>
@@ -40,6 +64,7 @@
     <string name="main_settingstitle_text">Settings</string>
     <string name="main_settingsdescription_title">Tweak your preferences</string>
     <string name="main_temperaturetoday_text">37 \'C</string>
+
     <!--EXERCISE-->
     <string name="exercise_daytitle_text">Sunday</string>
     <string name="exercise_datetoday_text">12 January 2018</string>
@@ -48,29 +73,32 @@
     <string name="exercise_distance_text">3404 meters</string>
     <string name="exercise_speed_text">42,4 Kmph</string>
     <string name="exercise_calori_text">1240 cal</string>
+
     <!--LOG-->
     <string name="log_time_text">19.02</string>
     <string name="log_distance_text">3400 meters Run</string>
+
     <!--SETTING-->
-    <string name="settings_accountsection_text">Account</string>
-    <string name="settings_displayname_hint">Your Display Name</string>
-    <string name="settings_email_hint">Your Email</string>
-    <string name="settings_username_hint">Your Username</string>
     <string name="settings_preferences_text">Preferences</string>
-    <string name="setting_bloodtype_hint">Your Blood Type</string>
-    <string name="settings_goals_hint">Your Goals</string>
     <string name="settings_medical_text">Medical</string>
+
     <string name="settings_height_hint">Your Height</string>
     <string name="settings_weight_hint">Your Weight</string>
     <string name="settings_age_hint">Your Age</string>
-    <string name="settings_weight_text">Weight</string>
+
+    <string name="settings_weight_text">Weight(Kg)</string>
     <string name="settings_age_text">Age</string>
-    <string name="settings_sex_hint">Your Sex</string>
     <string name="settings_sex_text">Sex</string>
-    <string name="settings_height_text">Height</string>
+    <string name="settings_height_text">Height(cm)</string>
     <string name="settings_goals_text">Goals</string>
     <string name="setting_bloodtype_text">Blood Type</string>
-    <string name="settings_username_text">Username</string>
-    <string name="settings_email_text">Email</string>
-    <string name="settings_displayname_text">Display Name</string>
+    <string name="settings_sleep_text">Sleep Pattern</string>
+
+    <!--ACTIVITTY LABELS-->
+    <string name="exercise_activity_label">Exercise</string>
+    <string name="achievements_activity_label">Achievements</string>
+    <string name="timeline_activity_label">Timeline</string>
+    <string name="settings_activity_label">Settings</string>
+    <string name="recommendations_activity_label">Recommendations</string>
+
 </resources>

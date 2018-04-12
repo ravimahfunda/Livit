@@ -15,11 +15,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ExerciseActivity"/>
-        <activity android:name=".AchievementsActivity"/>
-        <activity android:name=".TimelineActivity"/>
-        <activity android:name=".SettingsActivity"/>
-        <activity android:name=".RecommendationsActivity"/>
+        <activity android:name=".ExerciseActivity" android:label="@string/exercise_activity_label" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".AchievementsActivity" android:label="@string/achievements_activity_label" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".TimelineActivity" android:label="@string/timeline_activity_label" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".SettingsActivity" android:label="@string/settings_activity_label" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".RecommendationsActivity" android:label="@string/recommendations_activity_label" android:parentActivityName=".MainActivity"/>
+        <provider
+            android:authorities="org.d3ifcool.livit"
+            android:name=".data.settings.SettingProvider"
+            />
 
     </application>
 

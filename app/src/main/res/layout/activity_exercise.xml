@@ -5,198 +5,203 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_gray">
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <LinearLayout
-            android:background="@color/colorPrimary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <!--DAY TODAY-->
-                <TextView
-                    android:fontFamily="sans-serif-light"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/exercise_daytitle_text"
-                    android:textSize="32sp"
-                    android:textColor="#fff"/>
-                <!--DATE, MONTH, YEAR-->
-                <TextView
-                    android:fontFamily="sans-serif-light"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:text="@string/exercise_datetoday_text"
-                    android:textColor="@color/white"/>
-                <!--TEMPERATURE-->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="right">
-                    <!--TEMPERATURE TODAY-->
-                    <TextView
-                        android:fontFamily="sans-serif-light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="7dp"
-                        android:text="@string/main_temperaturetoday_text"
-                        android:textSize="18sp"
-                        android:textColor="@color/white"/>
-                    <!--TEMPERATURE ICON-->
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="2dp"
-                        android:src="@drawable/ic_cloud_queue_black_24dp"
-                        android:tint="@color/white" />
-                </LinearLayout>
-                <!--UV INDEX-->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="right">
-                    <!--UV INDEX TODAY-->
-                    <TextView
-                        android:fontFamily="sans-serif-light"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/exercise_uvindextoday_text"
-                        android:layout_marginRight="11dp"
-                        android:textSize="18sp"
-                        android:textColor="@color/white"/>
-                    <!--UV INDEX ICON-->
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="2dp"
-                        android:src="@drawable/ic_wb_sunny_black_24dp"
-                        android:tint="@color/white" />
-                </LinearLayout>
-                <!--TIMER-->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:text="@string/exercise_timer_text"
-                    android:textSize="50sp"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
-        </LinearLayout>
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp">
-            <!--DISTANCE-->
+            android:paddingBottom="80dp">
             <LinearLayout
-                android:background="#fafafa"
+                android:background="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="8dp">
+                android:orientation="vertical">
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+                    <!--DAY TODAY-->
                     <TextView
                         android:fontFamily="sans-serif-light"
-                        android:textSize="18sp"
-                        android:text="@string/exercise_distance_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/exercise_daytitle_text"
+                        android:textSize="32sp"
+                        android:textColor="#fff"/>
+                    <!--DATE, MONTH, YEAR-->
+                    <TextView
+                        android:fontFamily="sans-serif-light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginBottom="4dp"/>
+                        android:textSize="16sp"
+                        android:text="@string/exercise_datetoday_text"
+                        android:textColor="@color/white"/>
+                    <!--TEMPERATURE-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="right">
+                        <!--TEMPERATURE TODAY-->
+                        <TextView
+                            android:fontFamily="sans-serif-light"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="7dp"
+                            android:text="@string/main_temperaturetoday_text"
+                            android:textSize="18sp"
+                            android:textColor="@color/white"/>
+                        <!--TEMPERATURE ICON-->
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="2dp"
+                            android:src="@drawable/ic_cloud_queue_black_24dp"
+                            android:tint="@color/white" />
+                    </LinearLayout>
+                    <!--UV INDEX-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="right">
+                        <!--UV INDEX TODAY-->
+                        <TextView
+                            android:fontFamily="sans-serif-light"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/exercise_uvindextoday_text"
+                            android:layout_marginRight="11dp"
+                            android:textSize="18sp"
+                            android:textColor="@color/white"/>
+                        <!--UV INDEX ICON-->
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="2dp"
+                            android:src="@drawable/ic_wb_sunny_black_24dp"
+                            android:tint="@color/white" />
+                    </LinearLayout>
+                    <!--TIMER-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="@string/exercise_timer_text"
+                        android:textSize="50sp"
+                        android:textColor="@color/white"/>
                 </LinearLayout>
-                    <!--DISTANCE ICON-->
-                    <ImageView
-                        android:src="@drawable/ic_directions_run_black_24dp"
-                        android:tint="@color/colorPrimary"
-                        android:layout_gravity="center"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"/>
             </LinearLayout>
-            <!--SPEED-->
             <LinearLayout
-                android:background="#fafafa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="2dp">
+                android:orientation="vertical"
+                android:padding="8dp">
+                <!--DISTANCE-->
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:background="#fafafa"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:fontFamily="sans-serif-light"
-                        android:textStyle=""
-                        android:textSize="18sp"
-                        android:text="@string/exercise_speed_text"
-                        android:layout_gravity="center_vertical"
-                        android:layout_width="wrap_content"
+                    android:padding="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginBottom="4dp"/>
+                        android:orientation="vertical">
+                        <TextView
+                            android:fontFamily="sans-serif-light"
+                            android:textSize="18sp"
+                            android:text="@string/exercise_distance_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginBottom="4dp"/>
+                    </LinearLayout>
+                        <!--DISTANCE ICON-->
+                        <ImageView
+                            android:src="@drawable/ic_directions_run_black_24dp"
+                            android:tint="@color/colorPrimary"
+                            android:layout_gravity="center"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"/>
                 </LinearLayout>
-                    <!--SPEED ICON-->
-                    <ImageView
-                        android:src="@drawable/ic_timer_black_24dp"
-                        android:tint="@color/colorPrimary"
-                        android:layout_gravity="center"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"/>
-            </LinearLayout>
-            <!--CALORI-->
-            <LinearLayout
-                android:background="#fafafa"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:padding="16dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginTop="2dp">
+                <!--SPEED-->
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:background="#fafafa"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:fontFamily="sans-serif-light"
-                        android:textStyle=""
-                        android:textSize="18sp"
-                        android:text="@string/exercise_calori_text"
-                        android:layout_width="wrap_content"
+                    android:padding="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="2dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginBottom="4dp"/>
+                        android:orientation="vertical">
+                        <TextView
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle=""
+                            android:textSize="18sp"
+                            android:text="@string/exercise_speed_text"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginBottom="4dp"/>
+                    </LinearLayout>
+                        <!--SPEED ICON-->
+                        <ImageView
+                            android:src="@drawable/ic_timer_black_24dp"
+                            android:tint="@color/colorPrimary"
+                            android:layout_gravity="center"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"/>
                 </LinearLayout>
-                    <!--CALORI ICON-->
-                    <ImageView
-                        android:src="@drawable/ic_whatshot_black_24dp"
-                        android:tint="@color/colorPrimary"
-                        android:layout_gravity="center"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"/>
+                <!--CALORI-->
+                <LinearLayout
+                    android:background="#fafafa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:padding="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="2dp">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:fontFamily="sans-serif-light"
+                            android:textStyle=""
+                            android:textSize="18sp"
+                            android:text="@string/exercise_calori_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginBottom="4dp"/>
+                    </LinearLayout>
+                        <!--CALORI ICON-->
+                        <ImageView
+                            android:src="@drawable/ic_whatshot_black_24dp"
+                            android:tint="@color/colorPrimary"
+                            android:layout_gravity="center"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"/>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
     <!--BUTTON REFRESH, PAUSE AND STOP-->
     <LinearLayout
         android:id="@+id/action_buttons"
