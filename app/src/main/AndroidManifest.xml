@@ -32,6 +32,9 @@
             android:name=".SettingsActivity"
             android:label="@string/settings_activity_label"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".NutritionsActivity"
+            android:label="nutritions"
+            android:parentActivityName=".NutritionsActivity" />
         <activity
             android:name=".RecommendationsActivity"
             android:label="@string/recommendations_activity_label"
@@ -40,9 +43,6 @@
         <provider
             android:name=".data.settings.SettingProvider"
             android:authorities="org.d3ifcool.livit" />
-
-        <activity android:name=".NutritionsActivity" />
-        <activity android:name=".CatalogNutritionsActivity"></activity>
     </application>
 
 </manifest>
