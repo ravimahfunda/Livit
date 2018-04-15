@@ -188,7 +188,7 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
         values.put(NutritionsEntry.COLUMN_NUTRITIONS_MILK, mMilk);
         values.put(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY, mFruity);
 
-        Uri newUri = getContentResolver().insert(NutritionsContract.NutritionsEntry.CONTENT_URI, values);
+        Uri newUri = getContentResolver().insert(NutritionsEntry.CONTENT_URI, values);
         if(newUri == null){
             Toast.makeText(this, "Tidak Berhasil",
                     Toast.LENGTH_SHORT).show();
