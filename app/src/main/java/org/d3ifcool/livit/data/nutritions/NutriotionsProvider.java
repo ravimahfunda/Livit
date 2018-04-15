@@ -17,6 +17,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import org.d3ifcool.livit.data.nutritions.NutritionsContract.NutritionsEntry;
+import org.d3ifcool.livit.data.nutritions.NutritionsContract;
 
 /**
  * Created by Praktikan on 27/03/2018.

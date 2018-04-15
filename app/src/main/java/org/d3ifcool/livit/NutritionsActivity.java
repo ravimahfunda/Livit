@@ -16,8 +16,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
+import org.d3ifcool.livit.data.nutritions.NutritionsContract.NutritionsEntry;
 import org.d3ifcool.livit.data.nutritions.NutritionsContract;
-import org.d3ifcool.livit.data.settings.SettingsContract;
 
 /**
  * Allows user to create a new pet or edit an existing one.
@@ -182,11 +182,11 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
     private void insertNutritions(){
 
         ContentValues values = new ContentValues();
-        values.put(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_CARBS, NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_CARBS);
-        values.put(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN, NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN);
-        values.put(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE, NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE);
-        values.put(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_MILK, 170);
-        values.put(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_FRUITY, 47);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_CARBS, mCarbs);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN, mProtein);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE, mVegetable);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_MILK, mMilk);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY, mFruity);
 
         Uri newUri = getContentResolver().insert(NutritionsContract.NutritionsEntry.CONTENT_URI, values);
         if(newUri == null){
@@ -195,8 +195,9 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
         }else {
             Toast.makeText(this, "Berhasil",
                     Toast.LENGTH_SHORT).show();
+            finish();
         }
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>> "+ getContentResolver().insert(SettingsContract.SettingsEntry.CONTENT_URI, values));
+        //System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>> "+ getContentResolver().insert(NutritionsContract.NutritionsEntry.CONTENT_URI, values));
     }
 
     @Override
