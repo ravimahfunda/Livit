@@ -7,6 +7,19 @@
         <item>@string/blood_type_AB</item>
     </string-array>
 
+    <string-array name="array_nutritions_carbs_options">
+        <item>rice</item>
+        <item>bread</item>
+        <item>potato</item>
+    </string-array>
+
+    <string-array name="array_nutritions_protein_options">
+        <item>telur</item>
+        <item>ikan</item>
+        <item>tahu</item>
+        <item>tempe</item>
+    </string-array>
+
     <string-array name="array_goals_options">
         <item>@string/goals_conditioning</item>
         <item>@string/goals_muscle_mass</item>
