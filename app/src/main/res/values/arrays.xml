@@ -11,13 +11,17 @@
         <item>rice</item>
         <item>bread</item>
         <item>potato</item>
+        <item>other</item>
+        <item>unknown</item>
     </string-array>
 
     <string-array name="array_nutritions_protein_options">
-        <item>telur</item>
-        <item>ikan</item>
-        <item>tahu</item>
-        <item>tempe</item>
+        <item>lamb</item>
+        <item>meat</item>
+        <item>chicken</item>
+        <item>fish</item>
+        <item>egg</item>
+        <item>other</item>
     </string-array>
 
     <string-array name="array_goals_options">

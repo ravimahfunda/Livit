@@ -103,13 +103,15 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
                 String selection = (String) parent.getItemAtPosition(position);
                 if (!TextUtils.isEmpty(selection)) {
                     if (selection.equals("Rice")) {
-                        mCarbs = 1; // Male
+                        mCarbs = 1; // Rice
+                    } else if (selection.equals("Unknown")) {
+                        mCarbs = 2; // Unknown
                     } else if (selection.equals("Bread")) {
-                        mCarbs = 2; // Female
+                        mCarbs = 3; // Bread
                     } else if (selection.equals("Potato")) {
-                        mCarbs = 3; // Female
+                        mCarbs = 4; //Potato
                     } else {
-                        mCarbs = 0; // Unknown
+                        mCarbs = 0; // Other
                     }
                 }
             }
@@ -124,12 +126,20 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selection = (String) parent.getItemAtPosition(position);
                 if (!TextUtils.isEmpty(selection)) {
-                    if (selection.equals("Ikan")) {
-                        mProtein = 1; // Ikan
-                    } else if (selection.equals("Telur")) {
-                        mProtein = 2; // Telur
+                    if (selection.equals("Lamb")) {
+                        mProtein = 1; // Lamb
+                    } else if (selection.equals("Unknown")) {
+                        mProtein = 2; // Unknown
+                    } else if (selection.equals("Meat")) {
+                        mProtein = 3; // Meat
+                    } else if (selection.equals("Chicken")) {
+                        mProtein = 4; // Chicken
+                    } else if (selection.equals("Fish")) {
+                        mProtein = 5; // Fish
+                    } else if (selection.equals("Egg")) {
+                        mProtein = 6; // Egg
                     } else {
-                        mProtein = 0; // Unknown
+                        mProtein = 0; // Other
                     }
                 }
             }

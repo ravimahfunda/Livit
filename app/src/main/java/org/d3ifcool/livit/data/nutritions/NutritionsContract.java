@@ -38,13 +38,15 @@ public final class NutritionsContract {
         public final static int CARBS_RICE = 1;
         public final static int CARBS_BREAD = 2;
         public final static int CARBS_POTATO = 3;
+        public final static int CARBS_OTHER = 4;
 
         public static boolean isValidCarbs(Integer carbs){
             switch (carbs){
                 case CARBS_UNKNOWN :
                 case CARBS_RICE:
                 case CARBS_BREAD:
-                case CARBS_POTATO:{
+                case CARBS_POTATO:
+                case CARBS_OTHER:{
                     return true;
                 }
                 default:{
@@ -54,14 +56,22 @@ public final class NutritionsContract {
         }
 
         public final static int PROTEIN_UNKNOWN = 0;
-        public final static int PROTEIN_YES = 1;
-        public final static int PROTEIN_NO = 2;
+        public final static int PROTEIN_LAMB = 1;
+        public final static int PROTEIN_MEAT = 2;
+        public final static int PROTEIN_CHICKEN = 3;
+        public final static int PROTEIN_FISH = 4;
+        public final static int PROTEIN_EGG = 5;
+        public final static int PROTEIN_OTHER = 6;
 
         public static boolean isValidProtein(Integer protein){
             switch (protein){
                 case PROTEIN_UNKNOWN :
-                case PROTEIN_YES:
-                case PROTEIN_NO:{
+                case PROTEIN_LAMB:
+                case PROTEIN_MEAT:
+                case PROTEIN_CHICKEN:
+                case PROTEIN_FISH:
+                case PROTEIN_EGG:
+                case PROTEIN_OTHER:{
                     return true;
                 }
                 default:{

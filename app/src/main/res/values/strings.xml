@@ -105,10 +105,14 @@
     <string name="nutritions_carbs_rice">Rice</string>
     <string name="nutritions_carbs_bread">Bread</string>
     <string name="nutritions_carbs_potato">Potato</string>
+    <string name="nutritions_carbs_other">Other</string>
+    <string name="nutritions_carbs_unknown">Unknown</string>
 
-    <string name="nutritions_protein_telur">Telur</string>
-    <string name="nutritions_protein_ikan">Ikan</string>
-    <string name="nutritions_protein_tahu">Tahu</string>
-    <string name="nutritions_protein_tempe">Tempe</string>
+    <string name="nutritions_protein_lamb">Lamb</string>
+    <string name="nutritions_protein_meat">Meat</string>
+    <string name="nutritions_protein_chicken">Chicken</string>
+    <string name="nutritions_protein_fish">Fish</string>
+    <string name="nutritions_protein_egg">Egg</string>
+    <string name="nutritions_protein_other">Other</string>
 
 </resources>
