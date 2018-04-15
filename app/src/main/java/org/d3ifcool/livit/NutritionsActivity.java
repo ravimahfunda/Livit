@@ -205,26 +205,26 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
         //System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>> "+ getContentResolver().insert(NutritionsContract.NutritionsEntry.CONTENT_URI, values));
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu options from the res/menu/menu_editor.xml file.
-        // This adds menu items to the app bar.
-        getMenuInflater().inflate(R.menu.setting_option_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // User clicked on a menu option in the app bar overflow menu
-        switch (item.getItemId()) {
-            // Respond to a click on the "Insert dummy data" menu option
-            case R.id.action_done:
-                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
-                insertNutritions();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu options from the res/menu/menu_editor.xml file.
+//        // This adds menu items to the app bar.
+//        getMenuInflater().inflate(R.menu.setting_option_menu, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // User clicked on a menu option in the app bar overflow menu
+//        switch (item.getItemId()) {
+//            // Respond to a click on the "Insert dummy data" menu option
+//            case R.id.action_done:
+//                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+//                insertNutritions();
+//                return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
