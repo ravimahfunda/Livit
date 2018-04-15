@@ -106,12 +106,10 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
                 if (!TextUtils.isEmpty(selection)) {
                     if (selection.equals("Rice")) {
                         mCarbs = 1; // Rice
-                    } else if (selection.equals("Unknown")) {
-                        mCarbs = 2; // Unknown
                     } else if (selection.equals("Bread")) {
-                        mCarbs = 3; // Bread
+                        mCarbs = 2; // Bread
                     } else if (selection.equals("Potato")) {
-                        mCarbs = 4; //Potato
+                        mCarbs = 3; //Potato
                     } else {
                         mCarbs = 0; // Other
                     }
@@ -130,16 +128,14 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
                 if (!TextUtils.isEmpty(selection)) {
                     if (selection.equals("Lamb")) {
                         mProtein = 1; // Lamb
-                    } else if (selection.equals("Unknown")) {
-                        mProtein = 2; // Unknown
                     } else if (selection.equals("Meat")) {
-                        mProtein = 3; // Meat
+                        mProtein = 2; // Meat
                     } else if (selection.equals("Chicken")) {
-                        mProtein = 4; // Chicken
+                        mProtein = 3; // Chicken
                     } else if (selection.equals("Fish")) {
-                        mProtein = 5; // Fish
+                        mProtein = 4; // Fish
                     } else if (selection.equals("Egg")) {
-                        mProtein = 6; // Egg
+                        mProtein = 5; // Egg
                     } else {
                         mProtein = 0; // Other
                     }
@@ -248,12 +244,55 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         if (data.moveToFirst()){
-            mCarbsSpinner.setSelection(data.getInt(data.getColumnIndex(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_CARBS)));
-            mProteinSpinner.setSelection(data.getInt(data.getColumnIndex(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN)));
-            mVegetableRadioButton.setText(data.getInt(data.getColumnIndex(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE)));
-            mMilkRadioButton.setText(data.getString(data.getColumnIndex(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_MILK)));
-            mFruityRadioButton.setText(data.getString(data.getColumnIndex(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_FRUITY)));
+            mCarbsSpinner.setSelection(data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_CARBS)));
+            mProteinSpinner.setSelection(data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN)));
+            mVegetableRadioButton.setText(data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE)));
+            mMilkRadioButton.setText(data.getString(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_MILK)));
+            mFruityRadioButton.setText(data.getString(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY)));
+
+            int carbs = data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_CARBS));
+            switch (carbs){
+                case NutritionsEntry.CARBS_RICE:
+                    mCarbsSpinner.setSelection(1);
+                    break;
+
+                case NutritionsEntry.CARBS_BREAD:
+                    mCarbsSpinner.setSelection(2);
+                    break;
+
+                case NutritionsEntry.CARBS_POTATO:
+                    mCarbsSpinner.setSelection(3);
+                    break;
+
+                default:
+                    mCarbsSpinner.setSelection(0);
             }
+            int protein = data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_CARBS));
+            switch (protein){
+                case NutritionsEntry.PROTEIN_EGG:
+                    mProteinSpinner.setSelection(1);
+                    break;
+
+                case NutritionsEntry.PROTEIN_LAMB:
+                    mProteinSpinner.setSelection(2);
+                    break;
+
+                case NutritionsEntry.PROTEIN_MEAT:
+                    mProteinSpinner.setSelection(3);
+                    break;
+
+                case NutritionsEntry.PROTEIN_CHICKEN:
+                    mProteinSpinner.setSelection(4);
+                    break;
+
+                case NutritionsEntry.PROTEIN_FISH:
+                    mProteinSpinner.setSelection(5);
+                    break;
+
+                default:
+                    mProteinSpinner.setSelection(0);
+            }
+        }
     }
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {

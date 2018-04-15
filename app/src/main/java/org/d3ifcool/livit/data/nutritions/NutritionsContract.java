@@ -17,7 +17,7 @@ public final class NutritionsContract {
 
     public static final class NutritionsEntry implements BaseColumns {
 
-        //        TAMBAHIN INI
+        //TAMBAHIN INI
         public final static Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_NUTRITIONS);
         public final static String CONTENT_LIST_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
                 "/" + CONTENT_AUTHORITY + "/" + PATH_NUTRITIONS;
@@ -38,15 +38,13 @@ public final class NutritionsContract {
         public final static int CARBS_RICE = 1;
         public final static int CARBS_BREAD = 2;
         public final static int CARBS_POTATO = 3;
-        public final static int CARBS_OTHER = 4;
 
         public static boolean isValidCarbs(Integer carbs){
             switch (carbs){
                 case CARBS_UNKNOWN :
                 case CARBS_RICE:
                 case CARBS_BREAD:
-                case CARBS_POTATO:
-                case CARBS_OTHER:{
+                case CARBS_POTATO:{
                     return true;
                 }
                 default:{
@@ -61,7 +59,6 @@ public final class NutritionsContract {
         public final static int PROTEIN_CHICKEN = 3;
         public final static int PROTEIN_FISH = 4;
         public final static int PROTEIN_EGG = 5;
-        public final static int PROTEIN_OTHER = 6;
 
         public static boolean isValidProtein(Integer protein){
             switch (protein){
@@ -70,8 +67,7 @@ public final class NutritionsContract {
                 case PROTEIN_MEAT:
                 case PROTEIN_CHICKEN:
                 case PROTEIN_FISH:
-                case PROTEIN_EGG:
-                case PROTEIN_OTHER:{
+                case PROTEIN_EGG:{
                     return true;
                 }
                 default:{
