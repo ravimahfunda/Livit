@@ -42,7 +42,6 @@
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:weightSum="2">
-
         <RadioButton
             android:id="@+id/yesVeg"
             android:layout_width="0dp"
@@ -51,7 +50,6 @@
             android:layout_weight="1"
             android:text="Yes"
             android:textColor="#000" />
-
         <RadioButton
             android:id="@+id/noVeg"
             android:layout_width="0dp"
@@ -74,7 +72,6 @@
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:weightSum="2">
-
         <RadioButton
             android:id="@+id/yesMilk"
             android:layout_width="0dp"
@@ -83,7 +80,6 @@
             android:layout_weight="1"
             android:text="Yes"
             android:textColor="#000" />
-
         <RadioButton
             android:id="@+id/noMilk"
             android:layout_width="0dp"
@@ -106,7 +102,6 @@
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:weightSum="2">
-
         <RadioButton
             android:id="@+id/yesFruity"
             android:layout_width="0dp"
@@ -115,7 +110,6 @@
             android:layout_weight="1"
             android:text="Yes"
             android:textColor="#000" />
-
         <RadioButton
             android:id="@+id/noFruity"
             android:layout_width="0dp"
@@ -125,7 +119,6 @@
             android:text="No"
             android:textColor="#000" />
     </RadioGroup>
-
     <Button
         android:id="@+id/btnSubmit"
         android:layout_marginTop="28dp"
@@ -135,5 +128,4 @@
         android:text="@string/submit"
         android:onClick="submit_order"
         tools:ignore="OnClick" />
-
 </LinearLayout>

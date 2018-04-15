@@ -33,7 +33,7 @@
             android:label="@string/settings_activity_label"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".NutritionsActivity"
-            android:label="nutritions"
+            android:label="Nutritions"
             android:parentActivityName=".NutritionsActivity" />
         <activity
             android:name=".RecommendationsActivity"
@@ -42,6 +42,10 @@
 
         <provider
             android:name=".data.settings.SettingProvider"
+            android:authorities="org.d3ifcool.livit" />
+
+        <provider
+            android:name=".data.nutritions.NutriotionsProvider"
             android:authorities="org.d3ifcool.livit" />
     </application>
 

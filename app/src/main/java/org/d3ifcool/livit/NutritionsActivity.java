@@ -141,7 +141,6 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
                     }
                 }
             }
-
             // Because AdapterView is an abstract class, onNothingSelected must be defined
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -156,7 +155,6 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
         }else {
             mVegetableRadioButton = noVeg;
         }
-
         RadioButton yesMilk = (RadioButton) findViewById(R.id.yesMilk);
         RadioButton noMilk = (RadioButton) findViewById(R.id.noMilk);
 
@@ -165,7 +163,6 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
         }else {
             mVegetableRadioButton = noMilk;
         }
-
         RadioButton yesFruity = (RadioButton) findViewById(R.id.yesFruity);
         RadioButton noFruity = (RadioButton) findViewById(R.id.noFruity);
 
@@ -175,8 +172,6 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
             mFruityRadioButton = noFruity;
         }
     }
-
-
     private void insertNutritions(){
         NutritionsDbHelper mDbHelper = new NutritionsDbHelper(this);
 
