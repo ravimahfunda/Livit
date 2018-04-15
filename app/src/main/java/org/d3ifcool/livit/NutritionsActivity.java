@@ -174,7 +174,6 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
     }
     private void insertNutritions(){
         NutritionsDbHelper mDbHelper = new NutritionsDbHelper(this);
-
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -193,7 +192,7 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
                     Toast.LENGTH_SHORT).show();
             finish();
         }
-        //System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>> "+ getContentResolver().insert(NutritionsContract.NutritionsEntry.CONTENT_URI, values));
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>> "+ getContentResolver().insert(NutritionsContract.NutritionsEntry.CONTENT_URI, values));
     }
 
 //    @Override
