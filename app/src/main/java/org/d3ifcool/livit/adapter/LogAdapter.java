@@ -1,4 +1,4 @@
-package org.d3ifcool.livit;
+package org.d3ifcool.livit.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import org.d3ifcool.livit.R;
+import org.d3ifcool.livit.entity.Log;
 
 import java.util.List;
 

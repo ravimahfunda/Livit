@@ -25,6 +25,7 @@
                     android:orientation="vertical">
                     <!--DAY TODAY-->
                     <TextView
+                        android:id="@+id/exercises_day_textview"
                         android:fontFamily="sans-serif-light"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -33,6 +34,7 @@
                         android:textColor="#fff"/>
                     <!--DATE, MONTH, YEAR-->
                     <TextView
+                        android:id="@+id/exercises_date_textview"
                         android:fontFamily="sans-serif-light"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -87,11 +89,20 @@
                     </LinearLayout>
                     <!--TIMER-->
                     <TextView
+                        android:id="@+id/exercises_timer_textview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:text="@string/exercise_timer_text"
                         android:textSize="50sp"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:id="@+id/exercises_milis_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="@string/exercises_milis_text"
+                        android:textSize="16sp"
                         android:textColor="@color/white"/>
                 </LinearLayout>
             </LinearLayout>
@@ -214,6 +225,7 @@
         android:gravity="center">
         <!--BUTTON REFRESH-->
         <ImageView
+            android:id="@+id/exercises_reset_button"
             android:tint="@color/white"
             android:background="@drawable/circle_primary"
             android:src="@drawable/ic_replay_black_24dp"
@@ -222,19 +234,21 @@
             android:layout_height="48dp"/>
         <!--BUTTON PAUSE-->
         <ImageView
+            android:id="@+id/exercises_play_button"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:tint="@color/white"
             android:background="@drawable/circle_accent"
-            android:src="@drawable/ic_pause_black_24dp"
+            android:src="@drawable/ic_play_arrow_black_24dp"
             android:padding="10dp"
             android:layout_width="64dp"
             android:layout_height="64dp"/>
         <!--BUTTON STOP-->
         <ImageView
+            android:id="@+id/exercises_pause_button"
             android:tint="@color/white"
             android:background="@drawable/circle_danger"
-            android:src="@drawable/ic_stop_black_24dp"
+            android:src="@drawable/ic_pause_black_24dp"
             android:padding="10dp"
             android:layout_width="48dp"
             android:layout_height="48dp"/>

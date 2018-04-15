@@ -1,4 +1,4 @@
-package org.d3ifcool.livit.data.settings;
+package org.d3ifcool.livit.data;
 
 import android.content.ContentResolver;
 import android.net.Uri;
@@ -8,14 +8,16 @@ import android.provider.BaseColumns;
  * Created by Multimedia on 12/04/2018.
  */
 
-public class SettingsContract {
+public class LivitContract {
 
 
     public final static String CONTENT_AUTHORITY = "org.d3ifcool.livit";
     public final static Uri BASE_CONTENT_URI = Uri.parse("content://"+CONTENT_AUTHORITY);
     public final static String PATH_SETTINGS= "settings";
+    public final static String PATH_ACHIEVEMENTS = "achievements";
+    public final static String PATH_EXERCISES= "exercises";
 
-    private SettingsContract() {}
+    private LivitContract() {}
 
     public static final class SettingsEntry implements BaseColumns {
 
@@ -105,6 +107,62 @@ public class SettingsContract {
                 }
             }
         }
+
+    }
+
+    public static final class AchievementsEntry implements BaseColumns {
+
+        public final static Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_ACHIEVEMENTS);
+        public final static String CONTENT_LIST_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
+                "/" + CONTENT_AUTHORITY + "/" + PATH_ACHIEVEMENTS;
+        public final static String CONTENT_ITEM_TYPE = ContentResolver.CURSOR_ITEM_BASE_TYPE+
+                "/" + CONTENT_AUTHORITY + "/" + PATH_ACHIEVEMENTS;
+
+        public final static String TABLE_NAME = "achievements";
+
+        public final static String _ID = BaseColumns._ID;
+
+        public final static String COLUMN_ACHIEVEMENTS_TITLE= "title";
+        public final static String COLUMN_ACHIEVEMENTS_DESCRIPTION = "description";
+        public final static String COLUMN_ACHIEVEMENTS_PROGRESS = "progress";
+        public final static String COLUMN_ACHIEVEMENTS_TARGET = "target";
+        public final static String COLUMN_ACHIEVEMENTS_CATEGORY = "category";
+
+        public final static int TYPE_EXERCISES = 0;
+        public final static int TYPE_NUTRITIONS = 1;
+
+
+        public static boolean isType(Integer type){
+            switch (type){
+                case TYPE_EXERCISES:
+                case TYPE_NUTRITIONS:{
+                    return true;
+                }
+                default:{
+                    return false;
+                }
+            }
+        }
+
+    }
+
+    public static final class ExercisessEntry implements BaseColumns {
+
+        public final static Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_EXERCISES);
+        public final static String CONTENT_LIST_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE +
+                "/" + CONTENT_AUTHORITY + "/" + PATH_EXERCISES;
+        public final static String CONTENT_ITEM_TYPE = ContentResolver.CURSOR_ITEM_BASE_TYPE+
+                "/" + CONTENT_AUTHORITY + "/" + PATH_EXERCISES;
+
+        public final static String TABLE_NAME = "exercises";
+
+        public final static String _ID = BaseColumns._ID;
+
+        public final static String COLUMN_ACHIEVEMNTS_DATE_TIME= "date_time";
+        public final static String COLUMN_ACHIEVEMNTS_DURATION= "duration";
+        public final static String COLUMN_ACHIEVEMNTS_TRACK= "track";
+        public final static String COLUMN_ACHIEVEMNTS_AVERAGE_SPEED = "average_speed";
+        public final static String COLUMN_ACHIEVEMNTS_CALORIES_BURNED= "calories_burned";
 
     }
 

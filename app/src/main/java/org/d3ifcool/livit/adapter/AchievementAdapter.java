@@ -1,4 +1,4 @@
-package org.d3ifcool.livit;
+package org.d3ifcool.livit.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,6 +11,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import org.d3ifcool.livit.R;
+import org.d3ifcool.livit.entity.Achievement;
 
 import java.util.List;
 

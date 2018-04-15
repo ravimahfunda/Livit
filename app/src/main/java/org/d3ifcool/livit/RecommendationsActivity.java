@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.d3ifcool.livit.entity.Recommendation;
+
 import java.util.ArrayList;
 
 public class RecommendationsActivity extends AppCompatActivity {
