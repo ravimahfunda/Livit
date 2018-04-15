@@ -178,11 +178,11 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_CARBS, NutritionsEntry.COLUMN_NUTRITIONS_CARBS);
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN, NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN);
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE, NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE);
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_MILK, NutritionsEntry.COLUMN_NUTRITIONS_MILK);
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY, NutritionsEntry.COLUMN_NUTRITIONS_FRUITY);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_CARBS, mCarbs);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN, mProtein);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE, mVegetable);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_MILK, mMilk);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY, mFruity);
 
         Uri newUri = getContentResolver().insert(NutritionsEntry.CONTENT_URI, values);
         if(newUri == null){
