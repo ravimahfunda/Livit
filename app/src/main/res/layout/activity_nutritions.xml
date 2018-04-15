@@ -22,8 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="#000"
         android:hint="Protein"
+        android:textColor="#000"
         android:textSize="18sp" />
     <Spinner
         android:id="@+id/protein"
@@ -132,6 +132,8 @@
         android:layout_gravity="center_vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:text="@string/submit"
+        android:onClick="submit_order"
+        tools:ignore="OnClick" />
 
 </LinearLayout>

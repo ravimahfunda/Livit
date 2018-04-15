@@ -114,5 +114,6 @@
     <string name="nutritions_protein_fish">Fish</string>
     <string name="nutritions_protein_egg">Egg</string>
     <string name="nutritions_protein_other">Other</string>
+    <string name="submit">Submit</string>
 
 </resources>

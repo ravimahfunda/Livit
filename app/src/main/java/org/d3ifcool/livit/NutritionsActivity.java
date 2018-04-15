@@ -177,6 +177,8 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
             mFruityRadioButton = noFruity;
         }
     }
+
+
     private void insertNutritions(){
 
         ContentValues values = new ContentValues();
@@ -186,6 +188,14 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
         values.put(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_MILK, 170);
         values.put(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_FRUITY, 47);
 
+        Uri newUri = getContentResolver().insert(NutritionsContract.NutritionsEntry.CONTENT_URI, values);
+        if(newUri == null){
+            Toast.makeText(this, "Tidak Berhasil",
+                    Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(this, "Berhasil",
+                    Toast.LENGTH_SHORT).show();
+        }
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>> "+ getContentResolver().insert(SettingsContract.SettingsEntry.CONTENT_URI, values));
     }
 
@@ -246,6 +256,11 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
         mVegetableRadioButton.setText(0);
         mMilkRadioButton.setText(0);
         mFruityRadioButton.setText(0);
+    }
+
+    public void submit_order(View view) {
+        insertNutritions();
+
     }
 }
 
