@@ -1,6 +1,7 @@
 package org.d3ifcool.livit;
 
 import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import org.d3ifcool.livit.data.nutritions.NutritionsContract.NutritionsEntry;
 import org.d3ifcool.livit.data.nutritions.NutritionsContract;
+import org.d3ifcool.livit.data.nutritions.NutritionsDbHelper;
 
 /**
  * Allows user to create a new pet or edit an existing one.
@@ -180,6 +182,9 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
 
 
     private void insertNutritions(){
+        NutritionsDbHelper mDbHelper = new NutritionsDbHelper(this);
+
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(NutritionsEntry.COLUMN_NUTRITIONS_CARBS, mCarbs);
