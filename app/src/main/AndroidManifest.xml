@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.d3ifcool.livit">
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,37 +15,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ExerciseActivity"
-            android:label="@string/exercise_activity_label"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".AchievementsActivity"
-            android:label="@string/achievements_activity_label"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".TimelineActivity"
-            android:label="@string/timeline_activity_label"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".SettingsActivity"
-            android:label="@string/settings_activity_label"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".NutritionsActivity"
-            android:label="Nutritions"
-            android:parentActivityName=".NutritionsActivity" />
-        <activity
-            android:name=".RecommendationsActivity"
-            android:label="@string/recommendations_activity_label"
-            android:parentActivityName=".MainActivity" />
 
-        <!--<provider-->
-            <!--android:name=".data.settings.SettingProvider"-->
-            <!--android:authorities="org.d3ifcool.livit" />-->
-
+        <activity android:name=".ExerciseActivity" android:label="@string/exercise_activity_label" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".NutritionsActivity" android:label="@string/exercise_activity_label" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".AchievementsActivity" android:label="@string/achievements_activity_label" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".TimelineActivity" android:label="@string/timeline_activity_label" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".SettingsActivity" android:label="@string/settings_activity_label" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".RecommendationsActivity" android:label="@string/recommendations_activity_label" android:parentActivityName=".MainActivity"/>
         <provider
-            android:name=".data.nutritions.NutriotionsProvider"
-            android:authorities="org.d3ifcool.livit" />
+            android:authorities="org.d3ifcool.livit"
+            android:name=".data.LivitProvider" />
     </application>
 
 </manifest>

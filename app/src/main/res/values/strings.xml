@@ -69,10 +69,10 @@
     <string name="exercise_daytitle_text">Sunday</string>
     <string name="exercise_datetoday_text">12 January 2018</string>
     <string name="exercise_uvindextoday_text">4.5</string>
-    <string name="exercise_timer_text">01:02:02</string>
-    <string name="exercise_distance_text">3404 meters</string>
-    <string name="exercise_speed_text">42,4 Kmph</string>
-    <string name="exercise_calori_text">1240 cal</string>
+    <string name="exercise_timer_text">00:00:00</string>
+    <string name="exercise_distance_text">0 meters</string>
+    <string name="exercise_speed_text">0 Kmph</string>
+    <string name="exercise_calori_text">0 cal</string>
 
     <!--LOG-->
     <string name="log_time_text">19.02</string>
@@ -100,6 +100,7 @@
     <string name="timeline_activity_label">Timeline</string>
     <string name="settings_activity_label">Settings</string>
     <string name="recommendations_activity_label">Recommendations</string>
+    <string name="exercises_milis_text">000</string>
 
 
     <string name="nutritions_carbs_rice">Rice</string>

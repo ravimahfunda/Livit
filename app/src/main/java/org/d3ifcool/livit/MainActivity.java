@@ -5,10 +5,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
+import org.d3ifcool.livit.data.LivitContract;
 import org.d3ifcool.livit.data.nutritions.NutritionsContract;
-import org.d3ifcool.livit.data.settings.SettingsContract;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, SettingsActivity.class);
-                i.setData(ContentUris.withAppendedId(SettingsContract.SettingsEntry.CONTENT_URI, 1));
+                i.setData(ContentUris.withAppendedId(LivitContract.SettingsEntry.CONTENT_URI, 1));
                 startActivity(i);
             }
         });
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, NutritionsActivity.class);
-                i.setData(ContentUris.withAppendedId(NutritionsContract.NutritionsEntry.CONTENT_URI, 1));
+//                i.setData(ContentUris.withAppendedId(NutritionsContract.NutritionsEntry.CONTENT_URI, 1));
                 startActivity(i);
             }
         });

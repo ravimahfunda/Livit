@@ -18,13 +18,13 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.d3ifcool.livit.data.LivitDbHelper;
-import org.d3ifcool.livit.data.settings.SettingsContract.SettingsEntry;
+import org.d3ifcool.livit.data.LivitContract.SettingsEntry;
+import org.d3ifcool.livit.entity.User;
 
 public class SettingsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private LivitDbHelper mDbHelper;
     private Uri mCurrentPetUri;
-
 
     private Spinner mBloodTypeSpinner;
     private Spinner mGoalsSpinner;

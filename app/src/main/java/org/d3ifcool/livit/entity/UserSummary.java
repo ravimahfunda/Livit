@@ -1,4 +1,4 @@
-package org.d3ifcool.livit;
+package org.d3ifcool.livit.entity;
 
 /**
  * Represent data of a user
