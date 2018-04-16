@@ -9,7 +9,7 @@ import android.provider.BaseColumns;
  */
 
 public final class NutritionsContract {
-    public final static String CONTENT_AUTHORITY = "org.d3ifcool.livit.data.nutritions";
+    public final static String CONTENT_AUTHORITY = "org.d3ifcool.livit";
     public final static Uri BASE_CONTENT_URI = Uri.parse("content://"+CONTENT_AUTHORITY);
     public final static String PATH_NUTRITIONS = "nutritions";
 

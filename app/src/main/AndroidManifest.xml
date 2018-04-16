@@ -40,9 +40,9 @@
             android:label="@string/recommendations_activity_label"
             android:parentActivityName=".MainActivity" />
 
-        <provider
-            android:name=".data.settings.SettingProvider"
-            android:authorities="org.d3ifcool.livit" />
+        <!--<provider-->
+            <!--android:name=".data.settings.SettingProvider"-->
+            <!--android:authorities="org.d3ifcool.livit" />-->
 
         <provider
             android:name=".data.nutritions.NutriotionsProvider"

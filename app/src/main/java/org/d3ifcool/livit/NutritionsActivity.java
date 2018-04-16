@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.database.Cursor;
 import android.net.Uri;
@@ -72,6 +73,14 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
         setupSpinner();
 
         mCurrentNutritionsUri = getIntent().getData();
+
+        Button submit = (Button) findViewById(R.id.btnSubmit);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insertNutritions();
+            }
+        });
     }
     /**
      * Setup the dropdown spinner that allows the user to select the gender of the pet.
@@ -173,26 +182,16 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
         }
     }
     private void insertNutritions(){
-        NutritionsDbHelper mDbHelper = new NutritionsDbHelper(this);
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_CARBS, mCarbs);
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN, mProtein);
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE, mVegetable);
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_MILK, mMilk);
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY, mFruity);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_CARBS, NutritionsEntry.CARBS_RICE);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN, NutritionsEntry.PROTEIN_CHICKEN);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE, NutritionsEntry.VEGETABLE_YES);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_MILK, NutritionsEntry.MILK_YES);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY, NutritionsEntry.FRUITY_YES);
 
-        Uri newUri = getContentResolver().insert(NutritionsEntry.CONTENT_URI, values);
-        if(newUri == null){
-            Toast.makeText(this, "Tidak Berhasil",
-                    Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(this, "Berhasil",
-                    Toast.LENGTH_SHORT).show();
-            finish();
-        }
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>> "+ getContentResolver().insert(NutritionsContract.NutritionsEntry.CONTENT_URI, values));
+
     }
 
 //    @Override
@@ -203,18 +202,18 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
 //        return true;
 //    }
 //
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // User clicked on a menu option in the app bar overflow menu
-//        switch (item.getItemId()) {
-//            // Respond to a click on the "Insert dummy data" menu option
-//            case R.id.action_done:
-//                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
-//                insertNutritions();
-//                return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // User clicked on a menu option in the app bar overflow menu
+        switch (item.getItemId()) {
+            // Respond to a click on the "Insert dummy data" menu option
+            case R.id.action_done:
+                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+                insertNutritions();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
@@ -297,10 +296,10 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
         mFruityRadioButton.setText(0);
     }
 
-    public void submit_order(View view) {
-        insertNutritions();
-
-    }
+//    public void submit_order(View view) {
+//        insertNutritions();
+//
+//    }
 }
 
 //    RadioButton veg,noVeg,milk, noMilk, fruity, noFruity;
