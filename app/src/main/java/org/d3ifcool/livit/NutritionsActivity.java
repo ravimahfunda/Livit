@@ -44,15 +44,8 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
 
     private Uri mCurrentNutritionsUri;
 
-    /**
-     * Gender of the pet. The possible values are:
-     * 0 for unknown gender, 1 for male, 2 for female.
-     */
     private int mCarbs = 0;
     private int mProtein = 0;
-    private int mVegetable =0 ;
-    private int mMilk =0 ;
-    private int mFruity =0 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +75,7 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
             }
         });
     }
+
     /**
      * Setup the dropdown spinner that allows the user to select the gender of the pet.
      */
@@ -94,9 +88,7 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
 
         ArrayAdapter proteinSpinnerAdapter = ArrayAdapter.createFromResource(this,
                 R.array.array_nutritions_protein_options, android.R.layout.simple_spinner_item);
-//
-//
-//        // Specify dropdown layout style - simple list view with 1 item per line
+
         carbsSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         proteinSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 
@@ -113,14 +105,14 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selection = (String) parent.getItemAtPosition(position);
                 if (!TextUtils.isEmpty(selection)) {
-                    if (selection.equals("Rice")) {
-                        mCarbs = 1; // Rice
-                    } else if (selection.equals("Bread")) {
-                        mCarbs = 2; // Bread
-                    } else if (selection.equals("Potato")) {
-                        mCarbs = 3; //Potato
+                    if (selection.equals(getString(R.string.nutritions_carbs_rice))) {
+                        mCarbs = 0; // Rice
+                    } else if (selection.equals(getString(R.string.nutritions_carbs_bread))) {
+                        mCarbs = 1; // Bread
+                    } else if (selection.equals(getString(R.string.nutritions_carbs_potato))) {
+                        mCarbs = 2; //Potato
                     } else {
-                        mCarbs = 0; // Other
+                        mCarbs = 3; // Other
                     }
                 }
             }
@@ -135,18 +127,18 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selection = (String) parent.getItemAtPosition(position);
                 if (!TextUtils.isEmpty(selection)) {
-                    if (selection.equals("Lamb")) {
-                        mProtein = 1; // Lamb
-                    } else if (selection.equals("Meat")) {
-                        mProtein = 2; // Meat
-                    } else if (selection.equals("Chicken")) {
-                        mProtein = 3; // Chicken
-                    } else if (selection.equals("Fish")) {
-                        mProtein = 4; // Fish
-                    } else if (selection.equals("Egg")) {
-                        mProtein = 5; // Egg
+                    if (selection.equals(getString(R.string.nutritions_protein_lamb))) {
+                        mProtein = 0; // Lamb
+                    } else if (selection.equals(getString(R.string.nutritions_protein_meat))) {
+                        mProtein = 1; // Meat
+                    } else if (selection.equals(getString(R.string.nutritions_protein_chicken))){
+                        mProtein = 2; // Chicken
+                    } else if (selection.equals(getString(R.string.nutritions_protein_fish))){
+                        mProtein = 3; // Fish
+                    } else if (selection.equals(getString(R.string.nutritions_protein_egg))) {
+                        mProtein = 4; // Egg
                     } else {
-                        mProtein = 0; // Other
+                        mProtein = 5; // Other
                     }
                 }
             }
@@ -156,42 +148,26 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
                 mProtein = 0; // Unknown
             }
         });
-        RadioButton yesVeg = (RadioButton) findViewById(R.id.yesVeg);
-        RadioButton noVeg = (RadioButton) findViewById(R.id.noVeg);
 
-        if (yesVeg.isChecked()){
-            mVegetableRadioButton = yesVeg;
-        }else {
-            mVegetableRadioButton = noVeg;
-        }
-        RadioButton yesMilk = (RadioButton) findViewById(R.id.yesMilk);
-        RadioButton noMilk = (RadioButton) findViewById(R.id.noMilk);
-
-        if (yesMilk.isChecked()){
-            mMilkRadioButton = yesMilk;
-        }else {
-            mVegetableRadioButton = noMilk;
-        }
-        RadioButton yesFruity = (RadioButton) findViewById(R.id.yesFruity);
-        RadioButton noFruity = (RadioButton) findViewById(R.id.noFruity);
-
-        if (yesFruity.isChecked()){
-            mFruityRadioButton = yesFruity;
-        }else {
-            mFruityRadioButton = noFruity;
-        }
     }
+
     private void insertNutritions(){
+        RadioButton yesVeg = (RadioButton) findViewById(R.id.yesVeg);
+        RadioButton yesMilk = (RadioButton) findViewById(R.id.yesMilk);
+        RadioButton yesFruity = (RadioButton) findViewById(R.id.yesFruity);
+
+        int isVeg = yesVeg.isChecked() ? 1 : 0;
+        int isMilk = yesMilk.isChecked() ? 1 : 0;
+        int isFruity = yesFruity.isChecked() ? 1 : 0;
 
         ContentValues values = new ContentValues();
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_CARBS, NutritionsEntry.CARBS_RICE);
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN, NutritionsEntry.PROTEIN_CHICKEN);
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE, NutritionsEntry.VEGETABLE_YES);
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_MILK, NutritionsEntry.MILK_YES);
-        values.put(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY, NutritionsEntry.FRUITY_YES);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_CARBS, mCarbs);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN, mProtein);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE, isVeg);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_MILK, isMilk);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY, isFruity);
 
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>> "+ getContentResolver().insert(NutritionsContract.NutritionsEntry.CONTENT_URI, values));
-
+        getContentResolver().insert(NutritionsContract.NutritionsEntry.CONTENT_URI, values);
     }
 
 //    @Override
@@ -201,7 +177,7 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
 //        getMenuInflater().inflate(R.menu.setting_option_menu, menu);
 //        return true;
 //    }
-//
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // User clicked on a menu option in the app bar overflow menu
@@ -234,6 +210,7 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
                 null,
                 null);
     }
+
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         if (data.moveToFirst()){
@@ -262,113 +239,31 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
             }
             int protein = data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_CARBS));
             switch (protein){
-                case NutritionsEntry.PROTEIN_EGG:
+                case NutritionsEntry.PROTEIN_LAMB:
+                    mProteinSpinner.setSelection(0);
+                    break;
+                case NutritionsEntry.PROTEIN_MEAT:
                     mProteinSpinner.setSelection(1);
                     break;
-
-                case NutritionsEntry.PROTEIN_LAMB:
+                case NutritionsEntry.PROTEIN_CHICKEN:
                     mProteinSpinner.setSelection(2);
                     break;
-
-                case NutritionsEntry.PROTEIN_MEAT:
+                case NutritionsEntry.PROTEIN_FISH:
                     mProteinSpinner.setSelection(3);
                     break;
-
-                case NutritionsEntry.PROTEIN_CHICKEN:
+                case NutritionsEntry.PROTEIN_EGG:
                     mProteinSpinner.setSelection(4);
                     break;
-
-                case NutritionsEntry.PROTEIN_FISH:
-                    mProteinSpinner.setSelection(5);
-                    break;
-
                 default:
-                    mProteinSpinner.setSelection(0);
+                    mProteinSpinner.setSelection(5);
             }
         }
     }
+
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         mCarbsSpinner.setSelection(0);
         mProteinSpinner.setSelection(0);
-        mVegetableRadioButton.setText(0);
-        mMilkRadioButton.setText(0);
-        mFruityRadioButton.setText(0);
     }
 
-//    public void submit_order(View view) {
-//        insertNutritions();
-//
-//    }
 }
-
-//    RadioButton veg,noVeg,milk, noMilk, fruity, noFruity;
-//    int checkedRadioButton = 0;
-//    private RadioGroup.OnCheckedChangeListener checkedChangeListener = new RadioGroup.OnCheckedChangeListener() {
-//        @Override
-//        public void onCheckedChanged(RadioGroup group, int checkedId) {
-//            switch (checkedId){
-//                case R.id.yesVeg:
-//                    checkedRadioButton = 1;
-//                    break;
-//                case R.id.noVeg:
-//                    checkedRadioButton = 2;
-//                    break;
-//                case R.id.yesMilk:
-//                    checkedRadioButton = 3;
-//                    break;
-//                case R.id.noMilk:
-//                    checkedRadioButton = 4;
-//                    break;
-//                case R.id.yesFruity:
-//                    checkedRadioButton = 5;
-//                    break;
-//                case R.id.noFruity:
-//                    checkedRadioButton = 6;
-//                    break;
-//                default:
-//            }
-//        }
-//    };
-//    private View.OnClickListener onClickListenerSubmit = new View.OnClickListener() {
-//        @Override
-//        public void onClick(View v) {
-//            Toast.makeText(NutritionsActivity.this, getOption(), Toast.LENGTH_SHORT).show();
-//        }
-//    };
-//    private View.OnClickListener onClickListenerReset = new View.OnClickListener() {
-//        @Override
-//        public void onClick(View v) {
-//            veg.setChecked(false);
-//            noVeg.setChecked(false);
-//            milk.setChecked(false);
-//            noMilk.setChecked(false);
-//            fruity.setChecked(false);
-//            noFruity.setChecked(false);
-//            checkedRadioButton = 0;
-//        }
-//    };
-//    private String getOption(){
-//        if(checkedRadioButton == 0){
-//            return "Tidak ada option yang dipilih";
-//        }else if(checkedRadioButton == 1){
-//            return "Vegetable";
-//        }else if(checkedRadioButton == 2){
-//            return "No Vegetable";
-//        }else if(checkedRadioButton == 3){
-//            return "Milk";
-//        }else if(checkedRadioButton == 4){
-//            return "No Milk";
-//        }else if(checkedRadioButton == 5){
-//            return "Fruity";
-//        }else if(checkedRadioButton == 6){
-//            return "No Fruity";
-//        }else
-//            return "Option salah";
-//    }
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_nutritions)//
-//    }

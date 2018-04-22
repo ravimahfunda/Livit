@@ -9,12 +9,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import org.d3ifcool.livit.adapter.AchievementAdapter;
 import org.d3ifcool.livit.adapter.AchievementCursorAdapter;
 import org.d3ifcool.livit.data.LivitContract;
-import org.d3ifcool.livit.entity.Achievement;
-
-import java.util.ArrayList;
 
 public class AchievementsActivity extends AppCompatActivity implements android.support.v4.app.LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -24,14 +20,6 @@ public class AchievementsActivity extends AppCompatActivity implements android.s
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_achievements);
-
-        //Creating achievement data
-//        ArrayList<Achievement> achievements = new ArrayList<>();
-//        achievements.add(new Achievement("Runner","Run 1000 m",100,Achievement.CATEGORY_EXCERSISE));
-//        achievements.add(new Achievement("Vegeta","Eat 5 vegetables",80,Achievement.CATEGORY_NUTRITION));
-//        achievements.add(new Achievement("Heroes","Fill all data",30,Achievement.CATEGORY_OTHER));
-//        achievements.add(new Achievement("Diligent","Log in 7 deay consecutively",100,Achievement.CATEGORY_OTHER));
-//        achievements.add(new Achievement("Marathon","Run 4000m",60,Achievement.CATEGORY_EXCERSISE));
 
         //Implement log data to log list in layout
         ListView listView = (ListView) findViewById(R.id.achievements_list_view);

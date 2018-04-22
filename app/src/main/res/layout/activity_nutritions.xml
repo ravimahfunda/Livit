@@ -12,7 +12,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Carbs"
-        android:textColor="#000"
         android:textSize="18sp" />
     <Spinner
         android:id="@+id/carbs"
@@ -22,8 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Protein"
-        android:textColor="#000"
+        android:text="Protein"
         android:textSize="18sp" />
     <Spinner
         android:id="@+id/protein"
@@ -33,7 +31,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="#000"
         android:text="Vegetable"
         android:textSize="18sp" />
     <RadioGroup
@@ -48,8 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_weight="1"
-            android:text="Yes"
-            android:textColor="#000" />
+            android:text="Yes" />
         <RadioButton
             android:id="@+id/noVeg"
             android:layout_width="0dp"
@@ -57,13 +53,12 @@
             android:layout_marginLeft="15dp"
             android:layout_weight="1"
             android:text="No"
-            android:textColor="#000" />
+            android:checked="true"/>
     </RadioGroup>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="#000"
         android:text="Milk"
         android:textSize="18sp" />
     <RadioGroup
@@ -78,8 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_weight="1"
-            android:text="Yes"
-            android:textColor="#000" />
+            android:text="Yes" />
         <RadioButton
             android:id="@+id/noMilk"
             android:layout_width="0dp"
@@ -87,13 +81,12 @@
             android:layout_marginLeft="15dp"
             android:layout_weight="1"
             android:text="No"
-            android:textColor="#000" />
+            android:checked="true"/>
     </RadioGroup>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="#000"
         android:text="Fruity"
         android:textSize="18sp" />
     <RadioGroup
@@ -108,8 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_weight="1"
-            android:text="Yes"
-            android:textColor="#000" />
+            android:text="Yes" />
         <RadioButton
             android:id="@+id/noFruity"
             android:layout_width="0dp"
@@ -117,13 +109,15 @@
             android:layout_marginLeft="15dp"
             android:layout_weight="1"
             android:text="No"
-            android:textColor="#000" />
+            android:checked="true"/>
     </RadioGroup>
     <Button
+        android:background="@drawable/circle_accent"
         android:id="@+id/btnSubmit"
         android:layout_marginTop="28dp"
-        android:layout_gravity="center_vertical"
-        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="@string/submit" />
 </LinearLayout>
