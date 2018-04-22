@@ -11,8 +11,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import org.d3ifcool.livit.data.nutritions.NutritionsContract;
-
 /**
  * Created by Multimedia on 12/04/2018.
  */
@@ -355,22 +353,22 @@ public class LivitProvider extends ContentProvider {
             throw new IllegalArgumentException("Nutritions requires a carbs");
         }
 
-        Integer protein = values.getAsInteger(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN);
+        Integer protein = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN);
         if (protein == null) {
             throw new IllegalArgumentException("Nutritions requires valid protein");
         }
 
-        Integer vegetable = values.getAsInteger(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE);
+        Integer vegetable = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE);
         if (vegetable == null) {
             throw new IllegalArgumentException("Nutritions requires valid vegetable");
         }
 
-        Integer milk = values.getAsInteger(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_MILK);
+        Integer milk = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_MILK);
         if (milk == null) {
             throw new IllegalArgumentException("Nutritions requires valid milk");
         }
 
-        Integer fruity = values.getAsInteger(NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_FRUITY);
+        Integer fruity = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_FRUITY);
         if (fruity == null) {
             throw new IllegalArgumentException("Nutritions requires valid fruity");
         }

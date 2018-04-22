@@ -18,9 +18,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
-import org.d3ifcool.livit.data.nutritions.NutritionsContract.NutritionsEntry;
-import org.d3ifcool.livit.data.nutritions.NutritionsContract;
-import org.d3ifcool.livit.data.nutritions.NutritionsDbHelper;
+
+import org.d3ifcool.livit.data.LivitContract.NutritionsEntry;
 
 /**
  * Allows user to create a new pet or edit an existing one.
@@ -167,7 +166,7 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
         values.put(NutritionsEntry.COLUMN_NUTRITIONS_MILK, isMilk);
         values.put(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY, isFruity);
 
-        getContentResolver().insert(NutritionsContract.NutritionsEntry.CONTENT_URI, values);
+        getContentResolver().insert(NutritionsEntry.CONTENT_URI, values);
     }
 
 //    @Override
@@ -194,12 +193,12 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         String[] projection = {
-                NutritionsContract.NutritionsEntry._ID,
-                NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_CARBS,
-                NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN,
-                NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE,
-                NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_MILK,
-                NutritionsContract.NutritionsEntry.COLUMN_NUTRITIONS_FRUITY,
+                NutritionsEntry._ID,
+                NutritionsEntry.COLUMN_NUTRITIONS_CARBS,
+                NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN,
+                NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE,
+                NutritionsEntry.COLUMN_NUTRITIONS_MILK,
+                NutritionsEntry.COLUMN_NUTRITIONS_FRUITY,
         };
 
         return new android.support.v4.content.CursorLoader(

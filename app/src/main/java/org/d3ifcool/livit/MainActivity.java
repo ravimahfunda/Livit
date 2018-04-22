@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import org.d3ifcool.livit.data.LivitContract;
-import org.d3ifcool.livit.data.nutritions.NutritionsContract;
 
 public class MainActivity extends AppCompatActivity {
 
