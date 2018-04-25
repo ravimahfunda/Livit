@@ -63,12 +63,12 @@
     <string name="main_timelinedescription_text">See how awesome you are</string>
     <string name="main_settingstitle_text">Settings</string>
     <string name="main_settingsdescription_title">Tweak your preferences</string>
-    <string name="main_temperaturetoday_text">37 \'C</string>
 
     <!--EXERCISE-->
+    <string name="main_temperaturetoday_text">0</string>
     <string name="exercise_daytitle_text">Sunday</string>
     <string name="exercise_datetoday_text">12 January 2018</string>
-    <string name="exercise_uvindextoday_text">4.5</string>
+    <string name="exercise_uvindextoday_text">0 \'C</string>
     <string name="exercise_timer_text">00:00:00</string>
     <string name="exercise_distance_text">0 meters</string>
     <string name="exercise_speed_text">0 Kmph</string>
@@ -79,12 +79,6 @@
     <string name="log_distance_text">3400 meters Run</string>
 
     <!--SETTING-->
-    <string name="settings_preferences_text">Preferences</string>
-    <string name="settings_medical_text">Medical</string>
-
-    <string name="settings_height_hint">Your Height</string>
-    <string name="settings_weight_hint">Your Weight</string>
-    <string name="settings_age_hint">Your Age</string>
 
     <string name="settings_weight_text">Weight(Kg)</string>
     <string name="settings_age_text">Age</string>
@@ -93,6 +87,11 @@
     <string name="settings_goals_text">Goals</string>
     <string name="setting_bloodtype_text">Blood Type</string>
     <string name="settings_sleep_text">Sleep Pattern</string>
+
+    <string name="settings_blood_type_A">A</string>
+    <string name="settings_blood_type_B">B</string>
+    <string name="settings_blood_type_O">0</string>
+    <string name="settings_blood_type_AB">AB</string>
 
     <!--ACTIVITTY LABELS-->
     <string name="exercise_activity_label">Exercise</string>
@@ -117,11 +116,18 @@
     <string name="nutritions_protein_egg">Egg</string>
     <string name="nutritions_protein_other">Other</string>
 
-    <string name="nutrition_save_nutritions">Save</string>
-    <string name="nutrition_edit_nutritions">Edit</string>
+    <string name="nutrition_save_nutritions">Add new Nutrition</string>
+    <string name="nutrition_edit_nutritions">Edit Nutrition</string>
 
     <string name="submit">Submit</string>
     <string name="action_delete">Delete</string>
     <string name="action_cancel">Cancel</string>
+    <string name="settings_height_key">height</string>
+    <string name="settings_weight_key">weight</string>
+    <string name="settings_age_key">age</string>
+    <string name="settings_sex_key">sex</string>
+    <string name="settings_goals_key">goals</string>
+    <string name="settings_blood_type_key">blood_type</string>
+    <string name="settings_sleep_pattern_key">sleep_pattern</string>
 
 </resources>

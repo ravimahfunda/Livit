@@ -38,4 +38,28 @@
         <item>@string/sex_male</item>
         <item>@string/sex_female</item>
     </string-array>
+
+    <!--PREFERENCES-->
+    <string-array name="settings_blood_type_label">
+        <item>@string/settings_blood_type_A</item>
+        <item>@string/settings_blood_type_B</item>
+        <item>@string/settings_blood_type_O</item>
+        <item>@string/settings_blood_type_AB</item>
+    </string-array>
+
+    <string-array name="settings_goals_label">
+        <item>@string/goals_conditioning</item>
+        <item>@string/goals_muscle_mass</item>
+        <item>@string/goals_diet</item>
+    </string-array>
+
+    <string-array name="settings_sleep_patern_label">
+        <item>@string/sleep_pattern_normal</item>
+        <item>@string/sleep_pattern_poly_phasic</item>
+    </string-array>
+
+    <string-array name="settings_sex_label">
+        <item>@string/sex_male</item>
+        <item>@string/sex_female</item>
+    </string-array>
 </resources>

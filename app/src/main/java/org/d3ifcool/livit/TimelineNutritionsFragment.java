@@ -36,6 +36,8 @@ public class TimelineNutritionsFragment extends Fragment implements android.supp
         mNutritionsCursorAdapter = new NutritionsCursorAdapter(getContext(), null);
 
         listView.setAdapter(mNutritionsCursorAdapter);
+        View empty = rootView.findViewById(R.id.empty);
+        listView.setEmptyView(empty);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

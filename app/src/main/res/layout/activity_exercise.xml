@@ -49,6 +49,7 @@
                         android:layout_gravity="right">
                         <!--TEMPERATURE TODAY-->
                         <TextView
+                            android:id="@+id/exercise_humidity_textview"
                             android:fontFamily="sans-serif-light"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -72,6 +73,7 @@
                         android:layout_gravity="right">
                         <!--UV INDEX TODAY-->
                         <TextView
+                            android:id="@+id/exercise_temp_textview"
                             android:fontFamily="sans-serif-light"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

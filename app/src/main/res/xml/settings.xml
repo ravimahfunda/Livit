@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="settings_preferences_text">
+
+    <ListPreference
+        android:defaultValue="A"
+        android:entries="@array/settings_blood_type_label"
+        android:entryValues="@array/settings_blood_type_label"
+        android:key="@string/settings_blood_type_key"
+        android:title="@string/setting_bloodtype_text"/>
+    <ListPreference
+        android:defaultValue="Conditioning"
+        android:entries="@array/settings_goals_label"
+        android:entryValues="@array/settings_goals_label"
+        android:key="@string/settings_goals_key"
+        android:title="@string/settings_goals_text"/>
+    <ListPreference
+        android:defaultValue="Normal"
+        android:entries="@array/settings_sleep_patern_label"
+        android:entryValues="@array/settings_sleep_patern_label"
+        android:key="@string/settings_sleep_pattern_key"
+        android:title="@string/settings_sleep_text"/>
+    <ListPreference
+        android:defaultValue="Male"
+        android:entries="@array/settings_sex_label"
+        android:entryValues="@array/settings_sex_label"
+        android:key="@string/settings_sex_key"
+        android:title="@string/settings_sex_text"/>
+
+    <EditTextPreference
+        android:defaultValue="150"
+        android:inputType="numberDecimal"
+        android:key="@string/settings_height_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_height_text"/>
+    <EditTextPreference
+        android:defaultValue="40"
+        android:inputType="numberDecimal"
+        android:key="@string/settings_weight_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_weight_text"/>
+    <EditTextPreference
+        android:defaultValue="15"
+        android:inputType="numberDecimal"
+        android:key="@string/settings_age_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/settings_age_text"/>
+</PreferenceScreen>

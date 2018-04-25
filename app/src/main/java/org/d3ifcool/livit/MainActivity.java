@@ -46,8 +46,7 @@ public class MainActivity extends AppCompatActivity {
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, SettingsActivity.class);
-                i.setData(ContentUris.withAppendedId(LivitContract.SettingsEntry.CONTENT_URI, 1));
+                Intent i = new Intent(MainActivity.this, PreferencesActivity.class);
                 startActivity(i);
             }
         });
@@ -62,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, NutritionsActivity.class);
-//                i.setData(ContentUris.withAppendedId(NutritionsContract.NutritionsEntry.CONTENT_URI, 1));
                 startActivity(i);
             }
         });

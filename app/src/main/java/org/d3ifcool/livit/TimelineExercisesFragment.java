@@ -33,6 +33,8 @@ public class TimelineExercisesFragment extends Fragment implements android.suppo
         mExercisesCursorAdapter= new ExercisesCursorAdapter(getContext(), null);
 
         listView.setAdapter(mExercisesCursorAdapter);
+        View empty = rootView.findViewById(R.id.empty);
+        listView.setEmptyView(empty);
 
         getLoaderManager().initLoader(1,null,this);
         return  rootView;

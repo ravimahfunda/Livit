@@ -3,16 +3,11 @@ package org.d3ifcool.livit.data;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import org.d3ifcool.livit.data.LivitContract.SettingsEntry;
 import org.d3ifcool.livit.data.LivitContract.AchievementsEntry;
 import org.d3ifcool.livit.data.LivitContract.ExercisessEntry;
 import org.d3ifcool.livit.data.LivitContract.NutritionsEntry;
 
 import java.util.ArrayList;
-
-/**
- * Created by Multimedia on 12/04/2018.
- */
 
 public class LivitDbHelper extends SQLiteOpenHelper{
 
@@ -26,16 +21,6 @@ public class LivitDbHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String SQL_CREATE_SETTINGS_TABLE = "CREATE TABLE " + SettingsEntry.TABLE_NAME + " (" +
-                SettingsEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                SettingsEntry.COLUMN_SETTINGS_BLOOD_TYPE+" INTEGER NOT NULL, "+
-                SettingsEntry.COLUMN_SETTINGS_GOALS+" INTEGER NOT NULL, "+
-                SettingsEntry.COLUMN_SETTINGS_SLEEP_PATTERN+" INTEGER NOT NULL, "+
-                SettingsEntry.COLUMN_SETTINGS_HEIGHT+" INTEGER NOT NULL, "+
-                SettingsEntry.COLUMN_SETTINGS_WEIGHT+" INTEGER NOT NULL, "+
-                SettingsEntry.COLUMN_SETTINGS_AGE+" INTEGER NOT NULL, "+
-                SettingsEntry.COLUMN_SETTINGS_SEX+" INTEGER NOT NULL "+
-                ");";
 
         String SQL_CREATE_ACHIEVEMENTS_TABLE = "CREATE TABLE " + AchievementsEntry.TABLE_NAME + " (" +
                 AchievementsEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -65,7 +50,6 @@ public class LivitDbHelper extends SQLiteOpenHelper{
                 ");";
 
         ArrayList<String> initialQueries = new ArrayList<>();
-        initialQueries.add(SQL_CREATE_SETTINGS_TABLE);
         initialQueries.add(SQL_CREATE_ACHIEVEMENTS_TABLE);
         initialQueries.add(SQL_CREATE_EXERCISES_TABLE);
         initialQueries.add(SQL_CREATE_NUTRITIONS_TABLE);

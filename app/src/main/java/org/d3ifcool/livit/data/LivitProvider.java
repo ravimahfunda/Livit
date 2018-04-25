@@ -64,13 +64,6 @@ public class LivitProvider extends ContentProvider {
         int match = sUriMatcher.match(uri);
 
         switch (match){
-            case SETTINGS_ID : {
-                selection = LivitContract.SettingsEntry._ID + "=?";
-                selectionArgs = new String[] {String.valueOf(ContentUris.parseId(uri))};
-                cursor = db.query(LivitContract.SettingsEntry.TABLE_NAME, projection,
-                        selection, selectionArgs,null,null,sortOrder);
-                break;
-            }
             case ACHIEVEMENTS : {
                 cursor = db.query(LivitContract.AchievementsEntry.TABLE_NAME, projection,
                         selection, selectionArgs,null,null,sortOrder);
@@ -107,8 +100,6 @@ public class LivitProvider extends ContentProvider {
     public String getType(Uri uri) {
         final int match = sUriMatcher.match(uri);
         switch (match) {
-            case SETTINGS_ID:
-                return LivitContract.SettingsEntry.CONTENT_ITEM_TYPE;
             default:
                 throw new IllegalStateException("Unknown URI " + uri + " with match " + match);
         }
@@ -119,8 +110,6 @@ public class LivitProvider extends ContentProvider {
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues contentValues) {
         final int match = sUriMatcher.match(uri);
         switch (match) {
-            case SETTINGS:
-                return insertSettings(uri, contentValues);
             case ACHIEVEMENTS:
                 return insertAchievements(uri, contentValues);
             case EXERCISES:
@@ -141,7 +130,7 @@ public class LivitProvider extends ContentProvider {
         switch (match) {
             case NUTRITIONS_ID:
                 // Delete a single row given by the ID in the URI
-                selection = LivitContract.SettingsEntry._ID + "=?";
+                selection = LivitContract.NutritionsEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
                 int deleted = db.delete(LivitContract.NutritionsEntry.TABLE_NAME, selection, selectionArgs);
                 getContext().getContentResolver().notifyChange(uri, null);
@@ -163,56 +152,6 @@ public class LivitProvider extends ContentProvider {
             default:
                 throw new IllegalArgumentException("Update is not supported for " + uri);
         }
-    }
-
-    private Uri insertSettings(Uri uri, ContentValues values) {
-
-        Integer bloodType = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_BLOOD_TYPE);
-        if (bloodType== null || !LivitContract.SettingsEntry.isValidBloodType(bloodType)) {
-            throw new IllegalArgumentException("Settings requires valid blood type");
-        }
-
-        Integer goals = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_GOALS);
-        if (goals== null || !LivitContract.SettingsEntry.isValidGoals(goals)) {
-            throw new IllegalArgumentException("Settings requires valid goals");
-        }
-
-        Integer sleepPattern = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_SLEEP_PATTERN);
-        if (sleepPattern== null || !LivitContract.SettingsEntry.isValidSleepPattern(sleepPattern)) {
-            throw new IllegalArgumentException("Settings requires valid sleep pattern");
-        }
-
-        Integer height = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_HEIGHT);
-        if (height== null || height <= 0) {
-            throw new IllegalArgumentException("Settings requires height");
-        }
-
-        Integer weight = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_WEIGHT);
-        if (weight== null || weight <= 0) {
-            throw new IllegalArgumentException("Settings requires weight");
-        }
-
-        Integer age = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_AGE);
-        if (age== null || age <= 0) {
-            throw new IllegalArgumentException("Settings requires age");
-        }
-
-        Integer sex = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_SEX);
-        if (sex == null || !LivitContract.SettingsEntry.isValidSex(sex )) {
-            throw new IllegalArgumentException("Settings requires valid sex");
-        }
-
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
-
-        long id = db.insert(LivitContract.SettingsEntry.TABLE_NAME, null, values);
-        if (id == -1) {
-            Log.e(LOG_TAG, "Failed to insert row for " + uri);
-            return null;
-        }
-
-        getContext().getContentResolver().notifyChange(uri, null);
-
-        return ContentUris.withAppendedId(uri, id);
     }
 
     private Uri insertAchievements(Uri uri, ContentValues values){
