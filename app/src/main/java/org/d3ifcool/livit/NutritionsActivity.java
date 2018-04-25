@@ -1,11 +1,15 @@
 package org.d3ifcool.livit;
 
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.database.Cursor;
 import android.net.Uri;
@@ -16,10 +20,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.d3ifcool.livit.data.LivitContract.NutritionsEntry;
+import org.d3ifcool.livit.entity.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Allows user to create a new pet or edit an existing one.
@@ -71,6 +80,31 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
             @Override
             public void onClick(View v) {
                 insertNutritions();
+            }
+        });
+        mCurrentNutritionsUri = getIntent().getData();
+        if (mCurrentNutritionsUri == null){
+            setTitle(getString(R.string.nutrition_save_nutritions));
+            invalidateOptionsMenu();
+        }else {
+            setTitle(getString(R.string.nutrition_edit_nutritions));
+            getLoaderManager().initLoader(1, null, (android.app.LoaderManager.LoaderCallbacks<Object>) this);
+        }
+    }
+    private void deleteNutrition(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Dlete Dialog Message");
+        builder.setPositiveButton(R.string.action_delete, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                Log.d("NUTRITIONS", "Delete Nutrition Clicked");
+                finish();
+            }
+        });
+        builder.setNegativeButton(R.string.action_cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                dialog.dismiss();
             }
         });
     }
@@ -147,9 +181,7 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
                 mProtein = 0; // Unknown
             }
         });
-
     }
-
     private void insertNutritions(){
         RadioButton yesVeg = (RadioButton) findViewById(R.id.yesVeg);
         RadioButton yesMilk = (RadioButton) findViewById(R.id.yesMilk);
@@ -186,6 +218,9 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
                 Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
                 insertNutritions();
                 return true;
+            case R.id.action_delete:
+                deleteNutrition();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -213,12 +248,8 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         if (data.moveToFirst()){
-            mCarbsSpinner.setSelection(data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_CARBS)));
-            mProteinSpinner.setSelection(data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN)));
-            mVegetableRadioButton.setText(data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE)));
-            mMilkRadioButton.setText(data.getString(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_MILK)));
-            mFruityRadioButton.setText(data.getString(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY)));
-
+//            mCarbsSpinner.setSelection(data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_CARBS)));
+//            mProteinSpinner.setSelection(data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN)));
             int carbs = data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_CARBS));
             switch (carbs){
                 case NutritionsEntry.CARBS_RICE:
@@ -256,6 +287,9 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
                 default:
                     mProteinSpinner.setSelection(5);
             }
+            mVegetableRadioButton.setText(data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE)));
+            mMilkRadioButton.setText(data.getString(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_MILK)));
+            mFruityRadioButton.setText(data.getString(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY)));
         }
     }
 
@@ -264,5 +298,4 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
         mCarbsSpinner.setSelection(0);
         mProteinSpinner.setSelection(0);
     }
-
 }

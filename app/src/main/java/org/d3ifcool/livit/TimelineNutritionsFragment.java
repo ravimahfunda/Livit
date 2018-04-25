@@ -56,6 +56,7 @@ public class TimelineNutritionsFragment extends Fragment implements android.supp
                 null);
     }
 
+
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         mNutritionsCursorAdapter.swapCursor(data);

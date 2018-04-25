@@ -20,4 +20,11 @@ public class Log {
     public String getDescription() {
         return description;
     }
+
+
+    public static void d() {
+    }
+
+    public static void d(String nutritions, String s) {
+    }
 }

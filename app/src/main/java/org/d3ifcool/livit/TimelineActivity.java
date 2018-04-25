@@ -25,6 +25,4 @@ public class TimelineActivity extends AppCompatActivity{
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
         tabLayout.setupWithViewPager(viewPager);
     }
-
-
 }

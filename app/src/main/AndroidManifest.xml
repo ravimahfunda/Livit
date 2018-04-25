@@ -17,7 +17,7 @@
         </activity>
 
         <activity android:name=".ExerciseActivity" android:label="@string/exercise_activity_label" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".NutritionsActivity" android:label="@string/exercise_activity_label" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".NutritionsActivity" android:label="@string/nutritions_activity_label" android:parentActivityName=".MainActivity"/>
         <activity android:name=".AchievementsActivity" android:label="@string/achievements_activity_label" android:parentActivityName=".MainActivity"/>
         <activity android:name=".TimelineActivity" android:label="@string/timeline_activity_label" android:parentActivityName=".MainActivity"/>
         <activity android:name=".SettingsActivity" android:label="@string/settings_activity_label" android:parentActivityName=".MainActivity"/>
