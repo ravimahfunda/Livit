@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * Allows user to create a new pet or edit an existing one.
  */
-public class NutritionsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
+public class NutritionsActivity extends AppCompatActivity implements android.support.v4.app.LoaderManager.LoaderCallbacks<Cursor>{
 
     /** EditText field to enter the nutritions's Carbs */
     private Spinner mCarbsSpinner;
@@ -88,7 +88,7 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
             invalidateOptionsMenu();
         }else {
             setTitle(getString(R.string.nutrition_edit_nutritions));
-            getLoaderManager().initLoader(1, null, (android.app.LoaderManager.LoaderCallbacks<Object>) this);
+            getSupportLoaderManager().initLoader(1, null,  this);
         }
     }
     private void deleteNutrition(){
@@ -174,6 +174,7 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
                         mProtein = 5; // Other
                     }
                 }
+                System.out.println(">>>>>>>>>>>>>TYPE > "+ mProtein);
             }
             // Because AdapterView is an abstract class, onNothingSelected must be defined
             @Override
@@ -253,19 +254,19 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
             int carbs = data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_CARBS));
             switch (carbs){
                 case NutritionsEntry.CARBS_RICE:
-                    mCarbsSpinner.setSelection(1);
+                    mCarbsSpinner.setSelection(0);
                     break;
 
                 case NutritionsEntry.CARBS_BREAD:
-                    mCarbsSpinner.setSelection(2);
+                    mCarbsSpinner.setSelection(1);
                     break;
 
                 case NutritionsEntry.CARBS_POTATO:
-                    mCarbsSpinner.setSelection(3);
+                    mCarbsSpinner.setSelection(2);
                     break;
 
                 default:
-                    mCarbsSpinner.setSelection(0);
+                    mCarbsSpinner.setSelection(3);
             }
             int protein = data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_CARBS));
             switch (protein){
@@ -287,9 +288,9 @@ public class NutritionsActivity extends AppCompatActivity implements LoaderManag
                 default:
                     mProteinSpinner.setSelection(5);
             }
-            mVegetableRadioButton.setText(data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE)));
-            mMilkRadioButton.setText(data.getString(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_MILK)));
-            mFruityRadioButton.setText(data.getString(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY)));
+//            mVegetableRadioButton.setText(data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE)));
+//            mMilkRadioButton.setText(data.getString(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_MILK)));
+//            mFruityRadioButton.setText(data.getString(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY)));
         }
     }
 

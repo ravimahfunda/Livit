@@ -349,7 +349,7 @@ public class LivitProvider extends ContentProvider {
 
     private Uri insertNutritions(Uri uri, ContentValues values) {
         Integer carbs = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_CARBS);
-        if (carbs == null) {
+        if (carbs == null || !LivitContract.NutritionsEntry.isValidCarbs(carbs)) {
             throw new IllegalArgumentException("Nutritions requires a carbs");
         }
 

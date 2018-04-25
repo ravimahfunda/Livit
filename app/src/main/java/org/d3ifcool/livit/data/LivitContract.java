@@ -185,10 +185,10 @@ public class LivitContract {
         public final static String COLUMN_NUTRITIONS_MILK= "milk";
         public final static String COLUMN_NUTRITIONS_FRUITY= "fruity";
 
-        public final static int CARBS_UNKNOWN = 0;
-        public final static int CARBS_RICE = 1;
-        public final static int CARBS_BREAD = 2;
-        public final static int CARBS_POTATO = 3;
+        public final static int CARBS_RICE = 0;
+        public final static int CARBS_BREAD = 1;
+        public final static int CARBS_POTATO = 2;
+        public final static int CARBS_UNKNOWN = 3;
 
         public static boolean isValidCarbs(Integer carbs){
             switch (carbs){
@@ -204,12 +204,12 @@ public class LivitContract {
             }
         }
 
-        public final static int PROTEIN_UNKNOWN = 0;
-        public final static int PROTEIN_LAMB = 1;
-        public final static int PROTEIN_MEAT = 2;
-        public final static int PROTEIN_CHICKEN = 3;
-        public final static int PROTEIN_FISH = 4;
-        public final static int PROTEIN_EGG = 5;
+        public final static int PROTEIN_LAMB = 0;
+        public final static int PROTEIN_MEAT = 1;
+        public final static int PROTEIN_CHICKEN = 2;
+        public final static int PROTEIN_FISH = 3;
+        public final static int PROTEIN_EGG = 4;
+        public final static int PROTEIN_UNKNOWN = 5;
 
         public static boolean isValidProtein(Integer protein){
             switch (protein){
