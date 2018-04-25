@@ -1,5 +1,7 @@
 package org.d3ifcool.livit;
 
+import android.content.ContentUris;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +10,7 @@ import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import org.d3ifcool.livit.adapter.ExercisesCursorAdapter;
@@ -34,7 +37,17 @@ public class TimelineNutritionsFragment extends Fragment implements android.supp
 
         listView.setAdapter(mNutritionsCursorAdapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getContext(), NutritionsActivity.class);
+                intent.setData(ContentUris.withAppendedId(LivitContract.NutritionsEntry.CONTENT_URI, l));
+                startActivity(intent);
+            }
+        });
+
         getLoaderManager().initLoader(1,null,this);
+
         return  rootView;
     }
 
