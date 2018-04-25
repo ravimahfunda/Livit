@@ -1,34 +1,28 @@
 package org.d3ifcool.livit;
 
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.DialogInterface;
-import android.database.sqlite.SQLiteDatabase;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.database.Cursor;
 import android.net.Uri;
-import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.text.TextUtils;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import org.d3ifcool.livit.data.LivitContract;
 import org.d3ifcool.livit.data.LivitContract.NutritionsEntry;
 import org.d3ifcool.livit.entity.Log;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Allows user to create a new pet or edit an existing one.
@@ -42,13 +36,17 @@ public class NutritionsActivity extends AppCompatActivity implements android.sup
     private Spinner mProteinSpinner;
 
     /** EditText field to enter the nutritions's Vegetable */
-    private RadioButton mVegetableRadioButton;
+    private RadioButton mVegetableRadioButtonYes;
+    private RadioButton mVegetableRadioButtonNo;
 
     /** EditText field to enter the nutritions's Milk */
-    private RadioButton mMilkRadioButton;
+    private RadioButton mMilkRadioButtonYes;
+    private RadioButton mMilkRadioButtonNo;
+
 
     /** EditText field to enter the nutritions's Fruity */
-    private RadioButton mFruityRadioButton;
+    private RadioButton mFruityRadioButtonYes;
+    private RadioButton mFruityRadioButtonNo;
 
     private Uri mCurrentNutritionsUri;
 
@@ -64,14 +62,19 @@ public class NutritionsActivity extends AppCompatActivity implements android.sup
 
         mCarbsSpinner = (Spinner) findViewById(R.id.carbs);
         mProteinSpinner = (Spinner) findViewById(R.id.protein);
-        mVegetableRadioButton = (RadioButton) findViewById(R.id.yesVeg);
-        mVegetableRadioButton = (RadioButton) findViewById(R.id.noVeg);
-        mMilkRadioButton = (RadioButton) findViewById(R.id.yesMilk);
-        mMilkRadioButton = (RadioButton) findViewById(R.id.noMilk);
-        mFruityRadioButton = (RadioButton) findViewById(R.id.yesFruity);
-        mFruityRadioButton = (RadioButton) findViewById(R.id.noFruity);
+
+        mVegetableRadioButtonYes = (RadioButton) findViewById(R.id.yesVeg);
+        mVegetableRadioButtonNo = (RadioButton) findViewById(R.id.noVeg);
+
+        mMilkRadioButtonYes = (RadioButton) findViewById(R.id.yesMilk);
+        mMilkRadioButtonNo= (RadioButton) findViewById(R.id.noMilk);
+
+        mFruityRadioButtonYes = (RadioButton) findViewById(R.id.yesFruity);
+        mFruityRadioButtonNo = (RadioButton) findViewById(R.id.noFruity);
 
         setupSpinner();
+
+        mCurrentNutritionsUri = getIntent().getData();
 
         mCurrentNutritionsUri = getIntent().getData();
 
@@ -79,10 +82,17 @@ public class NutritionsActivity extends AppCompatActivity implements android.sup
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertNutritions();
+                if (mCurrentNutritionsUri == null){
+                    insertNutritions();
+                    finish();
+                }else {
+                    updateNutritions();
+                    finish();
+                }
+
             }
         });
-        mCurrentNutritionsUri = getIntent().getData();
+
         if (mCurrentNutritionsUri == null){
             setTitle(getString(R.string.nutrition_save_nutritions));
             invalidateOptionsMenu();
@@ -93,11 +103,11 @@ public class NutritionsActivity extends AppCompatActivity implements android.sup
     }
     private void deleteNutrition(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Dlete Dialog Message");
+        builder.setMessage("Delete Dialog Message");
         builder.setPositiveButton(R.string.action_delete, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int i) {
-                Log.d("NUTRITIONS", "Delete Nutrition Clicked");
+                getContentResolver().delete(mCurrentNutritionsUri, null,null);
                 finish();
             }
         });
@@ -107,6 +117,7 @@ public class NutritionsActivity extends AppCompatActivity implements android.sup
                 dialog.dismiss();
             }
         });
+        builder.show();
     }
 
     /**
@@ -128,9 +139,9 @@ public class NutritionsActivity extends AppCompatActivity implements android.sup
         // Apply the adapter to the spinner
         mCarbsSpinner.setAdapter(carbsSpinnerAdapter);
         mProteinSpinner.setAdapter(proteinSpinnerAdapter);
-        mVegetableRadioButton.isChecked();
-        mMilkRadioButton.isChecked();
-        mFruityRadioButton.isChecked();
+        mVegetableRadioButtonYes.isChecked();
+        mMilkRadioButtonYes.isChecked();
+        mFruityRadioButtonYes.isChecked();
 
         // Set the integer mSelected to the constant values
         mCarbsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -152,7 +163,7 @@ public class NutritionsActivity extends AppCompatActivity implements android.sup
             // Because AdapterView is an abstract class, onNothingSelected must be defined
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                mCarbs = 0; // Unknown
+                mCarbs = 3; // Unknown
             }
         });
         mProteinSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -174,16 +185,24 @@ public class NutritionsActivity extends AppCompatActivity implements android.sup
                         mProtein = 5; // Other
                     }
                 }
-                System.out.println(">>>>>>>>>>>>>TYPE > "+ mProtein);
             }
             // Because AdapterView is an abstract class, onNothingSelected must be defined
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                mProtein = 0; // Unknown
+                mProtein = 5; // Unknown
             }
         });
     }
+
     private void insertNutritions(){
+        getContentResolver().insert(NutritionsEntry.CONTENT_URI, getAllInput());
+    }
+
+    private void updateNutritions(){
+        getContentResolver().update(mCurrentNutritionsUri, getAllInput(), null,null);
+    }
+
+    private ContentValues getAllInput(){
         RadioButton yesVeg = (RadioButton) findViewById(R.id.yesVeg);
         RadioButton yesMilk = (RadioButton) findViewById(R.id.yesMilk);
         RadioButton yesFruity = (RadioButton) findViewById(R.id.yesFruity);
@@ -199,26 +218,21 @@ public class NutritionsActivity extends AppCompatActivity implements android.sup
         values.put(NutritionsEntry.COLUMN_NUTRITIONS_MILK, isMilk);
         values.put(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY, isFruity);
 
-        getContentResolver().insert(NutritionsEntry.CONTENT_URI, values);
+        return values;
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu options from the res/menu/menu_editor.xml file.
-//        // This adds menu items to the app bar.
-//        getMenuInflater().inflate(R.menu.setting_option_menu, menu);
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu options from the res/menu/menu_editor.xml file.
+        // This adds menu items to the app bar.
+        getMenuInflater().inflate(R.menu.setting_option_menu, menu);
+        return true;
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // User clicked on a menu option in the app bar overflow menu
         switch (item.getItemId()) {
-            // Respond to a click on the "Insert dummy data" menu option
-            case R.id.action_done:
-                Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
-                insertNutritions();
-                return true;
             case R.id.action_delete:
                 deleteNutrition();
                 return true;
@@ -268,7 +282,7 @@ public class NutritionsActivity extends AppCompatActivity implements android.sup
                 default:
                     mCarbsSpinner.setSelection(3);
             }
-            int protein = data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_CARBS));
+            int protein = data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN));
             switch (protein){
                 case NutritionsEntry.PROTEIN_LAMB:
                     mProteinSpinner.setSelection(0);
@@ -288,9 +302,25 @@ public class NutritionsActivity extends AppCompatActivity implements android.sup
                 default:
                     mProteinSpinner.setSelection(5);
             }
-//            mVegetableRadioButton.setText(data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE)));
-//            mMilkRadioButton.setText(data.getString(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_MILK)));
-//            mFruityRadioButton.setText(data.getString(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY)));
+
+            if (data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE)) == 1){
+                mVegetableRadioButtonYes.setChecked(true);
+            }else{
+                mVegetableRadioButtonNo.setChecked(true);
+            }
+
+            if (data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_MILK)) == 1){
+                mMilkRadioButtonYes.setChecked(true);
+            }else{
+                mMilkRadioButtonNo.setChecked(true);
+            }
+
+            if (data.getInt(data.getColumnIndex(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY)) == 1){
+                mFruityRadioButtonYes.setChecked(true);
+            }else{
+                mFruityRadioButtonNo.setChecked(true);
+            }
+
         }
     }
 

@@ -139,11 +139,13 @@ public class LivitProvider extends ContentProvider {
 
         final int match = sUriMatcher.match(uri);
         switch (match) {
-            case SETTINGS_ID:
+            case NUTRITIONS_ID:
                 // Delete a single row given by the ID in the URI
                 selection = LivitContract.SettingsEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
-                return db.delete(LivitContract.SettingsEntry.TABLE_NAME, selection, selectionArgs);
+                int deleted = db.delete(LivitContract.NutritionsEntry.TABLE_NAME, selection, selectionArgs);
+                getContext().getContentResolver().notifyChange(uri, null);
+                return deleted;
             default:
                 throw new IllegalArgumentException("Deletion is not supported for " + uri);
         }
@@ -154,10 +156,10 @@ public class LivitProvider extends ContentProvider {
                       String[] selectionArgs) {
         final int match = sUriMatcher.match(uri);
         switch (match) {
-            case SETTINGS_ID:
-                selection = LivitContract.SettingsEntry._ID + "=?";
+            case NUTRITIONS_ID:
+                selection = LivitContract.NutritionsEntry._ID + "=?";
                 selectionArgs = new String[] { String.valueOf(ContentUris.parseId(uri)) };
-                return updatePet(uri, contentValues, selection, selectionArgs);
+                return updateNutritions(uri, contentValues, selection, selectionArgs);
             default:
                 throw new IllegalArgumentException("Update is not supported for " + uri);
         }
@@ -211,65 +213,6 @@ public class LivitProvider extends ContentProvider {
         getContext().getContentResolver().notifyChange(uri, null);
 
         return ContentUris.withAppendedId(uri, id);
-    }
-
-    private int updatePet(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
-        if (values.containsKey(LivitContract.SettingsEntry.COLUMN_SETTINGS_BLOOD_TYPE)) {
-            Integer bloodType = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_BLOOD_TYPE);
-            if (bloodType== null || !LivitContract.SettingsEntry.isValidBloodType(bloodType)) {
-                throw new IllegalArgumentException("Settings requires valid blood type");
-            }
-        }
-
-        if (values.containsKey(LivitContract.SettingsEntry.COLUMN_SETTINGS_GOALS)) {
-            Integer goals = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_GOALS);
-            if (goals== null || !LivitContract.SettingsEntry.isValidGoals(goals)) {
-                throw new IllegalArgumentException("Settings requires valid goals");
-            }
-        }
-
-        if (values.containsKey(LivitContract.SettingsEntry.COLUMN_SETTINGS_SLEEP_PATTERN)) {
-            Integer sleepPattern = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_SLEEP_PATTERN);
-            if (sleepPattern == null || !LivitContract.SettingsEntry.isValidSleepPattern(sleepPattern)) {
-                throw new IllegalArgumentException("Settings requires valid sleep pattern");
-            }
-        }
-
-        if (values.containsKey(LivitContract.SettingsEntry.COLUMN_SETTINGS_HEIGHT)) {
-            Integer height = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_HEIGHT);
-            if (height== null || height <= 0) {
-                throw new IllegalArgumentException("Settings requires height");
-            }
-        }
-
-        if (values.containsKey(LivitContract.SettingsEntry.COLUMN_SETTINGS_WEIGHT)) {
-            Integer weight = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_WEIGHT);
-            if (weight== null || weight <= 0) {
-                throw new IllegalArgumentException("Settings requires weight");
-            }
-        }
-
-        if (values.containsKey(LivitContract.SettingsEntry.COLUMN_SETTINGS_AGE)) {
-            Integer age = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_AGE);
-            if (age== null || age <= 0) {
-                throw new IllegalArgumentException("Settings requires age");
-            }
-        }
-
-        if (values.containsKey(LivitContract.SettingsEntry.COLUMN_SETTINGS_SEX)) {
-            Integer sex = values.getAsInteger(LivitContract.SettingsEntry.COLUMN_SETTINGS_SEX);
-            if (sex == null || !LivitContract.SettingsEntry.isValidSex(sex )) {
-                throw new IllegalArgumentException("Settings requires valid sex");
-            }
-        }
-
-        if (values.size() == 0) {
-            return 0;
-        }
-
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
-
-        return db.update(LivitContract.SettingsEntry.TABLE_NAME, values, selection, selectionArgs);
     }
 
     private Uri insertAchievements(Uri uri, ContentValues values){
@@ -354,24 +297,25 @@ public class LivitProvider extends ContentProvider {
         }
 
         Integer protein = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN);
-        if (protein == null) {
+        if (protein == null || !LivitContract.NutritionsEntry.isValidProtein(protein)) {
             throw new IllegalArgumentException("Nutritions requires valid protein");
         }
 
         Integer vegetable = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE);
-        if (vegetable == null) {
+        if (vegetable == null || !LivitContract.NutritionsEntry.isValidVegetable(vegetable)) {
             throw new IllegalArgumentException("Nutritions requires valid vegetable");
         }
 
         Integer milk = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_MILK);
-        if (milk == null) {
+        if (milk == null || !LivitContract.NutritionsEntry.isValidMilk(milk)) {
             throw new IllegalArgumentException("Nutritions requires valid milk");
         }
 
         Integer fruity = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_FRUITY);
-        if (fruity == null) {
+        if (fruity == null || !LivitContract.NutritionsEntry.isValidFruity(fruity)) {
             throw new IllegalArgumentException("Nutritions requires valid fruity");
         }
+
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         long id = db.insert(LivitContract.NutritionsEntry.TABLE_NAME, null, values);
@@ -383,6 +327,54 @@ public class LivitProvider extends ContentProvider {
         getContext().getContentResolver().notifyChange(uri, null);
 
         return ContentUris.withAppendedId(uri, id);
+    }
+
+    private int updateNutritions(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
+
+        if (values.containsKey(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_CARBS)) {
+            Integer carbs = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_CARBS);
+            if (carbs == null || !LivitContract.NutritionsEntry.isValidCarbs(carbs)) {
+                throw new IllegalArgumentException("Nutrtion requires valid carbs");
+            }
+        }
+
+        if (values.containsKey(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN)) {
+            Integer protein = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN);
+            if (protein == null || !LivitContract.NutritionsEntry.isValidProtein(protein)) {
+                throw new IllegalArgumentException("Nutrtion requires valid protein");
+            }
+        }
+
+        if (values.containsKey(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE)) {
+            Integer veg = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE);
+            if (veg == null || !LivitContract.NutritionsEntry.isValidVegetable(veg)) {
+                throw new IllegalArgumentException("Nutrtion requires valid veggies");
+            }
+        }
+
+        if (values.containsKey(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_MILK)) {
+            Integer milk = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_MILK);
+            if (milk == null || !LivitContract.NutritionsEntry.isValidMilk(milk)) {
+                throw new IllegalArgumentException("Nutrtion requires valid milk");
+            }
+        }
+
+        if (values.containsKey(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_FRUITY)) {
+            Integer fruity = values.getAsInteger(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_FRUITY);
+            if (fruity == null || !LivitContract.NutritionsEntry.isValidFruity(fruity)) {
+                throw new IllegalArgumentException("Nutrtion requires valid fruity");
+            }
+        }
+
+        if (values.size() == 0) {
+            return 0;
+        }
+
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        getContext().getContentResolver().notifyChange(uri, null);
+
+        return db.update(LivitContract.NutritionsEntry.TABLE_NAME, values, selection, selectionArgs);
     }
 
 }

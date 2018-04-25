@@ -192,10 +192,10 @@ public class LivitContract {
 
         public static boolean isValidCarbs(Integer carbs){
             switch (carbs){
-                case CARBS_UNKNOWN :
                 case CARBS_RICE:
                 case CARBS_BREAD:
-                case CARBS_POTATO:{
+                case CARBS_POTATO:
+                case CARBS_UNKNOWN :{
                     return true;
                 }
                 default:{

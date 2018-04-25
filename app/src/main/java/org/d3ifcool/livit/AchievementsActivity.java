@@ -74,9 +74,9 @@ public class AchievementsActivity extends AppCompatActivity implements android.s
         // User clicked on a menu option in the app bar overflow menu
         switch (item.getItemId()) {
             // Respond to a click on the "Insert dummy data" menu option
-            case R.id.action_done:
-                insertAchievements();
-                return true;
+//            case R.id.action_done:
+//                insertAchievements();
+//                return true;
         }
         return super.onOptionsItemSelected(item);
     }

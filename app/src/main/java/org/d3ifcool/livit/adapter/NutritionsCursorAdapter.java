@@ -48,7 +48,7 @@ public class NutritionsCursorAdapter extends CursorAdapter {
 
         int proteinData = cursor.getInt(cursor.getColumnIndex(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN));
         String proteinString;
-        switch (carbsData){
+        switch (proteinData){
             case 0:
                 proteinString = context.getString(R.string.nutritions_protein_lamb);
                 break;
