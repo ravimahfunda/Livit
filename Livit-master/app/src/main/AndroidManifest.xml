@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.d3ifcool.livit">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ExerciseActivity"
+            android:label="@string/exercise_activity_label"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".NutritionsActivity"
+            android:label="@string/nutritions_activity_label"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AchievementsActivity"
+            android:label="@string/achievements_activity_label"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".TimelineActivity"
+            android:label="@string/timeline_activity_label"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".RecommendationsActivity"
+            android:label="@string/recommendations_activity_label"
+            android:parentActivityName=".MainActivity" />
+
+        <provider
+            android:name=".data.LivitProvider"
+            android:authorities="org.d3ifcool.livit" />
+
+        <activity android:name=".PreferencesActivity"></activity>
+    </application>
+
+</manifest>

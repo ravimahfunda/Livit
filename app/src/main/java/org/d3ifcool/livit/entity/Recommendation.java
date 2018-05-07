@@ -5,29 +5,19 @@ package org.d3ifcool.livit.entity;
  * Consisting title, description, and a state wheter user want to reminded or not
  */
 public class Recommendation {
-    private String title;
-    private String description;
-    private boolean isReminding;
+    private String nama;
+    private String tipe;
 
-    public Recommendation(String title, String description) {
-        this.title = title;
-        this.description = description;
-        this.isReminding = false;
+    public Recommendation(String nama, String tipe) {
+        this.nama = nama;
+        this.tipe = tipe;
     }
 
-    public String getTitle() {
-        return title;
+    public String getNama() {
+        return nama;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public boolean isReminding() {
-        return isReminding;
-    }
-
-    public void setReminding(boolean reminding) {
-        isReminding = reminding;
+    public String getTipe() {
+        return tipe;
     }
 }
