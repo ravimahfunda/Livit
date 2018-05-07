@@ -1,0 +1,133 @@
+<resources>
+    <string name="app_name">Livit</string>
+    <string name="title_activity_food_list">FoodListActivity</string>
+    <string name="weekly_target_title">Weekly Target</string>
+
+    <!--NEW ERA-->
+    <!--BLOOD TYPE-->
+    <string name="blood_type_A">A</string>
+    <string name="blood_type_B">B</string>
+    <string name="blood_type_O">0</string>
+    <string name="blood_type_AB">AB</string>
+
+    <!--GOALS-->
+    <string name="goals_conditioning">Conditioning</string>
+    <string name="goals_muscle_mass">Muscle Mass</string>
+    <string name="goals_diet">Diet</string>
+
+    <!--SLEEP PATTERN-->
+    <string name="sleep_pattern_normal">Normal</string>
+    <string name="sleep_pattern_poly_phasic">Poly-phasic</string>
+
+    <!--BLOOD TYPE-->
+    <string name="sex_male">Male</string>
+    <string name="sex_female">Female</string>
+
+    <!--RECOMMENDATION-->
+    <string name="recommendation_title_sampletext">Wake up</string>
+    <string name="recommendation_description_sampletext">Wake up early! Get your things done at 7 AM.</string>
+    <string name="reccomendation_reminder_label">Remind me?</string>
+    <string name="recommendation_reminder_button_text">Yes, please</string>
+
+    <!--TIMELINE-->
+    <string name="timeline_devider_text">Today</string>
+    <string name="timeline_recent_activities_text">Recent Activities</string>
+    <string name="timeline_calori_burned_sampletext">560k</string>
+    <string name="timeline_calori_burned_title">Calori Burned</string>
+    <string name="timeline_avgspeed_sampletext">560k</string>
+    <string name="timeline_avgspeed_title">Avg. Speed</string>
+    <string name="timeline_track_sampletext">560k</string>
+    <string name="timeline_track_title">Track</string>
+    <string name="timeline_email_sampletext">jhondoe@gmail.com</string>
+    <string name="timeline_name_sampletext">John Doe</string>
+
+    <!--ACHIEVEMENTS-->
+    <string name="achievement_description_sampletext">Lorem Ipsum sit dolor amet asdkasdasdkashda</string>
+    <string name="achievement_title_sample_text">Lorem Ipsum</string>
+    <string name="achievements_weeklytargettitle_text">Lorem Ipsum sit dolor amet rahma vew view akas</string>
+    <string name="achievements_todotitle">To Do</string>
+
+    <!--MAIN-->
+    <string name="main_exercisetitle_text">Exercise</string>
+    <string name="main_numbersofdaytitle_text">DAY #29</string>
+    <string name="main_numbersofdaydescription_text">Keep on track, you are doing well.</string>
+    <string name="main_nextmenutitle_text">What\'s next?</string>
+    <string name="main_exercisedescription_text">Feeling numb? Go outside</string>
+    <string name="main_nutritiontitle_text">Nutrition</string>
+    <string name="main_nutritiondescription_text">Track your daily intake</string>
+    <string name="main_achievementstitle_text">Achievements</string>
+    <string name="main_achievementsdescription_text">Need motivation? Set your goal</string>
+    <string name="main_recommendationstitle_text">Recommendations</string>
+    <string name="main_recommendationsdescription_text">Live smart!</string>
+    <string name="main_timelinetitle_text">Timeline</string>
+    <string name="main_timelinedescription_text">See how awesome you are</string>
+    <string name="main_settingstitle_text">Settings</string>
+    <string name="main_settingsdescription_title">Tweak your preferences</string>
+
+    <!--EXERCISE-->
+    <string name="main_temperaturetoday_text">0</string>
+    <string name="exercise_daytitle_text">Sunday</string>
+    <string name="exercise_datetoday_text">12 January 2018</string>
+    <string name="exercise_uvindextoday_text">0 \'C</string>
+    <string name="exercise_timer_text">00:00:00</string>
+    <string name="exercise_distance_text">0 meters</string>
+    <string name="exercise_speed_text">0 Kmph</string>
+    <string name="exercise_calori_text">0 cal</string>
+
+    <!--LOG-->
+    <string name="log_time_text">19.02</string>
+    <string name="log_distance_text">3400 meters Run</string>
+
+    <!--SETTING-->
+
+    <string name="settings_weight_text">Weight(Kg)</string>
+    <string name="settings_age_text">Age</string>
+    <string name="settings_sex_text">Sex</string>
+    <string name="settings_height_text">Height(cm)</string>
+    <string name="settings_goals_text">Goals</string>
+    <string name="setting_bloodtype_text">Blood Type</string>
+    <string name="settings_sleep_text">Sleep Pattern</string>
+
+    <string name="settings_blood_type_A">A</string>
+    <string name="settings_blood_type_B">B</string>
+    <string name="settings_blood_type_O">0</string>
+    <string name="settings_blood_type_AB">AB</string>
+
+    <!--ACTIVITTY LABELS-->
+    <string name="exercise_activity_label">Exercise</string>
+    <string name="nutritions_activity_label">Nutrition</string>
+    <string name="achievements_activity_label">Achievements</string>
+    <string name="timeline_activity_label">Timeline</string>
+    <string name="settings_activity_label">Settings</string>
+    <string name="recommendations_activity_label">Recommendations</string>
+    <string name="exercises_milis_text">000</string>
+
+
+    <string name="nutritions_carbs_rice">Rice</string>
+    <string name="nutritions_carbs_bread">Bread</string>
+    <string name="nutritions_carbs_potato">Potato</string>
+    <string name="nutritions_carbs_other">Other</string>
+    <string name="nutritions_carbs_unknown">Unknown</string>
+
+    <string name="nutritions_protein_lamb">Lamb</string>
+    <string name="nutritions_protein_meat">Meat</string>
+    <string name="nutritions_protein_chicken">Chicken</string>
+    <string name="nutritions_protein_fish">Fish</string>
+    <string name="nutritions_protein_egg">Egg</string>
+    <string name="nutritions_protein_other">Other</string>
+
+    <string name="nutrition_save_nutritions">Add new Nutrition</string>
+    <string name="nutrition_edit_nutritions">Edit Nutrition</string>
+
+    <string name="submit">Submit</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="settings_height_key">height</string>
+    <string name="settings_weight_key">weight</string>
+    <string name="settings_age_key">age</string>
+    <string name="settings_sex_key">sex</string>
+    <string name="settings_goals_key">goals</string>
+    <string name="settings_blood_type_key">blood_type</string>
+    <string name="settings_sleep_pattern_key">sleep_pattern</string>
+
+</resources>

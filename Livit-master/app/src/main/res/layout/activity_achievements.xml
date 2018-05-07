@@ -1,0 +1,20 @@
+<!--ACHIEVEMENT MENU-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray">
+    <!--LIST VIEW TO DO-->
+    <ListView
+        android:id="@+id/achievements_list_view"
+        android:layout_below="@+id/targetSummary"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
+    <TextView
+        android:id="@+id/empty"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="No data"/>
+</RelativeLayout>
