@@ -57,6 +57,8 @@ public class LivitDbHelper extends SQLiteOpenHelper{
         for (String query: initialQueries) {
             db.execSQL(query);
         }
+
+
     }
 
     @Override
