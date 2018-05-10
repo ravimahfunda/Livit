@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://E:\n\Livit\Livit.iml" filepath="E:\n\Livit\Livit.iml" />
-      <module fileurl="file://D:\INI\Livit-master\Livit.iml" filepath="D:\INI\Livit-master\Livit.iml" />
-      <module fileurl="file://C:\Users\haaniifaa\Documents\rahma\livit now\Livit\Livit.iml" filepath="C:\Users\haaniifaa\Documents\rahma\livit now\Livit\Livit.iml" />
       <module fileurl="file://$PROJECT_DIR$/Livit-master.iml" filepath="$PROJECT_DIR$/Livit-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\INI\Livit-master\app\app.iml" filepath="D:\INI\Livit-master\app\app.iml" />
-      <module fileurl="file://E:\n\Livit\app\app.iml" filepath="E:\n\Livit\app\app.iml" />
-      <module fileurl="file://C:\Users\haaniifaa\Documents\rahma\livit now\Livit\app\app.iml" filepath="C:\Users\haaniifaa\Documents\rahma\livit now\Livit\app\app.iml" />
     </modules>
   </component>
 </project>

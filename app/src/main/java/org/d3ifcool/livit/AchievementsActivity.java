@@ -8,10 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import org.d3ifcool.livit.adapter.AchievementCursorAdapter;
 import org.d3ifcool.livit.data.LivitContract;
+import org.d3ifcool.livit.entity.Achievement;
 
 public class AchievementsActivity extends AppCompatActivity implements android.support.v4.app.LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -31,7 +33,18 @@ public class AchievementsActivity extends AppCompatActivity implements android.s
 
         listView.setAdapter(mAchievementsCursorAdapter);
 
+        Button goBtn = (Button) findViewById(R.id.go_bt);
+        goBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = 0; i < 10 ; i++) {
+                    insertAchievements();
+                }
+            }
+        });
+
         getSupportLoaderManager().initLoader(1,null,this);
+
     }
 
     @Override
@@ -64,25 +77,6 @@ public class AchievementsActivity extends AppCompatActivity implements android.s
         mAchievementsCursorAdapter.swapCursor(null);
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu options from the res/menu/menu_catalog.xml file.
-//        // This adds menu items to the app bar.
-////        getMenuInflater().inflate(R.menu.setting_option_menu, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // User clicked on a menu option in the app bar overflow menu
-//        switch (item.getItemId()) {
-//            // Respond to a click on the "Insert dummy data" menu option
-////            case R.id.action_done:
-////                insertAchievements();
-////                return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
 
     private void insertAchievements(){
         ContentValues values = new ContentValues();

@@ -109,13 +109,12 @@ public class RecommendationLoader extends AsyncTaskLoader<List<Recommendation>> 
 
         try {
             JSONObject root = new JSONObject(json);
-            JSONArray features = root.getJSONArray("features");
+            JSONArray features = root.getJSONArray("a");
             for (int i = 0; i < features.length(); i++) {
                 JSONObject currentFeature = features.getJSONObject(i);
-                JSONObject properties = currentFeature.getJSONObject("properties");
 
-                String nama = properties.getString("nama");
-                String tipe = properties.getString("tipe");
+                String nama = currentFeature.getString("nama");
+                String tipe = currentFeature.getString("tipe");
                 result.add(new Recommendation(nama, tipe));
             }
         } catch (JSONException e) {
