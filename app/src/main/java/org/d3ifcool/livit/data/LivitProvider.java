@@ -255,6 +255,11 @@ public class LivitProvider extends ContentProvider {
             throw new IllegalArgumentException("Nutritions requires valid fruity");
         }
 
+        String time = values.getAsString(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_TIME);
+        if (time == null) {
+            throw new IllegalArgumentException("Nutritions requires valid time");
+        }
+
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         long id = db.insert(LivitContract.NutritionsEntry.TABLE_NAME, null, values);

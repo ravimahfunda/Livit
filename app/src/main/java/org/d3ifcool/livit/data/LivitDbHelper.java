@@ -46,7 +46,8 @@ public class LivitDbHelper extends SQLiteOpenHelper{
                 NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN+" INTEGER NOT NULL, "+
                 NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE+" INTEGER NOT NULL, "+
                 NutritionsEntry.COLUMN_NUTRITIONS_MILK+" INTEGER NOT NULL, "+
-                NutritionsEntry.COLUMN_NUTRITIONS_FRUITY+" INTEGER NOT NULL "+
+                NutritionsEntry.COLUMN_NUTRITIONS_FRUITY+" INTEGER NOT NULL, "+
+                NutritionsEntry.COLUMN_NUTRITIONS_TIME+" TEXT NOT NULL "+
                 ");";
 
         ArrayList<String> initialQueries = new ArrayList<>();

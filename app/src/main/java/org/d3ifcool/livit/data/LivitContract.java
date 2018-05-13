@@ -93,6 +93,7 @@ public class LivitContract {
         public final static String COLUMN_NUTRITIONS_VEGETABLE= "vegetable";
         public final static String COLUMN_NUTRITIONS_MILK= "milk";
         public final static String COLUMN_NUTRITIONS_FRUITY= "fruity";
+        public final static String COLUMN_NUTRITIONS_TIME= "time";
 
         public final static int CARBS_RICE = 0;
         public final static int CARBS_BREAD = 1;

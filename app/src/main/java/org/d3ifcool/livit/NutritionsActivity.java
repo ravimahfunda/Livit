@@ -24,6 +24,10 @@ import org.d3ifcool.livit.data.LivitContract;
 import org.d3ifcool.livit.data.LivitContract.NutritionsEntry;
 import org.d3ifcool.livit.entity.Log;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Allows user to create a new pet or edit an existing one.
  */
@@ -211,12 +215,18 @@ public class NutritionsActivity extends AppCompatActivity implements android.sup
         int isMilk = yesMilk.isChecked() ? 1 : 0;
         int isFruity = yesFruity.isChecked() ? 1 : 0;
 
+        Date currentTime = Calendar.getInstance().getTime();
+        SimpleDateFormat dayFormatter = new SimpleDateFormat("kk.mm");
+
+        String time = dayFormatter.format(currentTime);
+
         ContentValues values = new ContentValues();
         values.put(NutritionsEntry.COLUMN_NUTRITIONS_CARBS, mCarbs);
         values.put(NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN, mProtein);
         values.put(NutritionsEntry.COLUMN_NUTRITIONS_VEGETABLE, isVeg);
         values.put(NutritionsEntry.COLUMN_NUTRITIONS_MILK, isMilk);
         values.put(NutritionsEntry.COLUMN_NUTRITIONS_FRUITY, isFruity);
+        values.put(NutritionsEntry.COLUMN_NUTRITIONS_TIME, time);
 
         return values;
     }

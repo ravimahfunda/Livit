@@ -24,9 +24,6 @@ public class NutritionsCursorAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView timeTextView= (TextView) view.findViewById(R.id.times_textview);
-        timeTextView.setText("10.10");
-
 
         int carbsData = cursor.getInt(cursor.getColumnIndex(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_CARBS));
         String carbsString;
@@ -68,6 +65,10 @@ public class NutritionsCursorAdapter extends CursorAdapter {
                 proteinString = context.getString(R.string.nutritions_protein_other);
                 break;
         }
+
+        String timeData = cursor.getString(cursor.getColumnIndex(LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_TIME));
+        TextView timeTextView = (TextView) view.findViewById(R.id.time_textview);
+        timeTextView.setText(timeData);
 
         TextView descriptionTextView= (TextView) view.findViewById(R.id.description_textview);
         descriptionTextView.setText("A meal of "+carbsString+" with "+proteinString);

@@ -29,7 +29,7 @@ public class ExercisesCursorAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView timeTextView= (TextView) view.findViewById(R.id.times_textview);
+        TextView timeTextView= (TextView) view.findViewById(R.id.time_textview);
         timeTextView.setText(cursor.getString(cursor.
                 getColumnIndex(LivitContract.ExercisessEntry.COLUMN_ACHIEVEMNTS_DATE_TIME)));
 

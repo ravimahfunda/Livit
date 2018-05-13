@@ -59,7 +59,7 @@ public class TimelineNutritionsFragment extends Fragment implements android.supp
                 LivitContract.NutritionsEntry._ID,
                 LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_CARBS,
                 LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_PROTEIN,
-
+                LivitContract.NutritionsEntry.COLUMN_NUTRITIONS_TIME,
         };
 
         return new android.support.v4.content.CursorLoader(
